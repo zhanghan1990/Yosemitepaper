@@ -1,0 +1,62 @@
+\section{Optimized Distributed Storage with Cache}
+
+In this section, we quantify the mean service latency for file access with functional caching. The result enables us to formulate a cache optimization problem for latency minimization and develop an efficient algorithm solution.
+
+\subsection{Formulation of Optimization}
+
+At time $t$, we consider the cache optimization problem, which decides the optimal number $d_{i,t}$ of file-$i$ chunks to store in the cache memory, satisfying cache capacity constraint $\sum_id_{i,t}\le C$, in order to minimize mean service latency of all files. Under functional caching, each file-$i$ request is served by accessing $d_{i,t}$ chunks in the cache, along with $k_i-d_{i,t}$ distinct chunks that are selected from $n_i$ storage nodes. Thus, the latency to access file $i$ under functional caching is determined by the maximum processing (queuing) delay of the selected $k_i-d_{i,t}$ storage nodes. Quantifying service latency in such erasure-coded system is an open problem. In this paper, we use probabilistic scheduling proposed in \cite{Yu_TON} to derive an upper bound on the average file latency.
+
+The key idea is to forward each file-$i$ request to a set of $k_i-d_{i,t}$ storage nodes (denoted by $\mathcal{A}_{i,t}\subseteq \mathcal{S}_i$) with some predetermined probabilities $\{\pi_{i,j,t}\in [0,1], \forall i,j,t\}$ for $j\in\mathcal{A}_{i,t}$. Each node then manages a local queue and process chunk requests with service rate $\mu_j$. While the local queues are not independent due to coupled request arrivals, we can leverage order statistic analysis to derive an upper bound of mean service latency in closed-form \cite{Yu_TON}. The result is then optimized over probabilities $\pi_{i,j,t}$ to obtain the tightest bound. Let ${\bf Q}_{j,t}$ be the (random) waiting time a chunk request spends in the queue of node $j$ in time-bin $t$. Using the functional caching approach, requests of file $i$ see mean latency $\bar{T}_{i,t}$ given by
+\vspace{-.1in}\begin{eqnarray}
+\D \bar{T}_{i,t}= \mathbb{E}\left[\mathbb{E}_{\mathcal{A}_{i,t}} \left(\max_{ j\in \mathcal{A}_{i,t}} \{ {\bf Q}_{j,t} \} \right) \right], \label{eq:T_bar}
+\end{eqnarray}
+where the first expectation is taken over system queuing dynamics and the second expectation is taken over random dispatch decisions $\mathcal{A}_{i,t}$. We note that queuing delay ${\bf Q}_{j,t}$'s are dependent due to coupled request arrivals. Therefore, an exact queuing analysis of the system is intractable. We use the technique in \cite{Yu_TON} to derive an upper bound of (\ref{eq:T_bar}).
+
+%We randomly selected servers with respect to conditional probabilities $\{\pi_{i,j,t}\in [0,1], \forall i,j,t\}$ to quantify the latency of probabilistic scheduling.
+
+We denote ${\bf X}_j$ as the service time per chunk at node $j$, which has an arbitrary distribution satisfying finite mean $\mathbb{E}[{\bf X}_j]=1/\mu_j$, variance $\mathbb{E}[{\bf X}_j^2]-\mathbb{E}[{\bf X}_j]^2=\sigma^2_j$, second moment $\mathbb{E}[{\bf X}_j^2]=\Gamma_j^2$, and third moment $\mathbb{E}[{\bf X}_j^3]=\hat{\Gamma}^3_j$. These statistics can be readily inferred from existing work on network delay \cite{AY11,WK} and file-size distribution \cite{D11,PT12}. Following \cite{Yu_TON}, an upper bound on the expected latency is given as follows.
+
+\begin{lemma} \label{th:lemma_1}
+The expected latency $\bar{T}_{i,t}$ of file $i$    in time-bin $t$ under probabilistic scheduling is upper bounded by $\bar{U}_{i,t}$, given by
+\vspace{-.1in}
+\begin{eqnarray}
+\D & \bar{U}_{i,t} & = \min_{z_{i,t}\in \mathbb{R}} \left\{ z_{i,t}+\sum_{j\in \mathcal{S}_{i,t}} \frac{\pi_{i,j,t}}{2}  \left(\mathbb{E}[{\bf Q}_{j,t}] -z_{i,t} \right) \right.  \label{eq:lemma1} \nonumber\\
+& & \left.+ \sum_{j\in \mathcal{S}_{i,t}} \frac{\pi_{i,j,t}}{2} \left[ \sqrt{(\mathbb{E}[{\bf Q}_{j,t}]-z_{i,t})^2+{\rm Var}[{\bf Q}_{j,t}]}\right] \right\},
+\end{eqnarray}
+where
+\vspace{-.2in}\begin{eqnarray}
+\mathbb{E}[  {\bf Q}_{j,t}] =  \frac{1}{\mu_j} + \frac{ \Lambda_{j,t} \Gamma_j^2 }{2(1- \rho_{j,t})}, \label{eq:lemma2_1}
+\end{eqnarray}
+\vspace{-0.2in}
+\begin{eqnarray}
+{\rm Var}[ {\bf Q}_{j,t}] =\sigma_j^2+\frac{ \Lambda_{j,t} \hat{\Gamma}_j^3}{3(1-\rho_{j,t})}+\frac{\Lambda_{j,t}^2\Gamma_j^4}{4(1- \rho_{j,t})^2} , \label{eq:lemma2_2}
+\end{eqnarray}
+where $\rho_{j,t}=\Lambda_{j,t} / \mu_j$ is the request intensity at node $j$, and $\Lambda_{j,t}=\sum_i \lambda_{i,t}\pi_{i,j,t}$ is the mean arrival rate at node $j$.
+The bound is tight in the sense that there exists a distribution of ${\bf Q}_{j,t}$ such that (\ref{eq:lemma1}) is satisfied with exact equality.
+\end{lemma}
+
+
+
+We now formulate the cache optimization in a single time-bin. The optimization is over cache content placement $d_{i,t}$, scheduling probabilities $\pi_{i,j,t}$, and auxiliary variable $z_{i,t}$ in the upper bound. Let $\hat{\lambda}_t=\sum_i \lambda_{i,t}$ be the total arrival rate, so $\lambda_{i,t}/\hat{\lambda}$ is the fraction of file $i$ requests, and average latency of all files is given by $\sum_i (\lambda_{i,t}/\hat{\lambda}_t)\bar{T}_{i,t}$. Our objective is to minimize an average {\em latency} objective, i.e.,
+\vspace{-0.1in}
+\begin{eqnarray}
+& \D {\rm min} & \sum_{i=1}^r \frac{\lambda_{i,t}}{\hat{\lambda}_t}  \bar{U}_{i_t}  \label{eq:JLRM-SC}\\
+& {\rm s.t.} &  (\ref{eq:lemma1}), \ (\ref{eq:lemma2_1}), \ (\ref{eq:lemma2_2}), \  \sum_{j=1}^{m}\pi_{i,j,t} = k_i - d_{i,t}, \  \pi_{i,j,t}, d_{i,t}\ge 0, \nonumber\\ && \sum_i d_{i,t}\le C, \  \pi_{i,j,t} = 0 \text{ for } j\notin {\cal S}_i, \  \pi_{i,j,t}\le 1, \nonumber\\
+&&z_{i,t}\ge 0,  d_{i,t} \in {\mathbb Z}.  \label{eq:JLRM-SC2}   \nonumber \\
+& {\rm var.} &  \pi_{i,j,t}, \ d_{i,t}, \ z_{i,t} \ \forall i,j,t. \nonumber
+\end{eqnarray}
+Here the constraints  $\sum_{j=1}^{m}\pi_{i,j,t} = k_i - d_{i,t}$ and $\pi_{i,j,t}\le 1$ ensure that  $k_i - d_{i,t}$ distinct storage nodes (along with $d_{i,t}$ chunks in the cache) are selected to process each file request, following probabilistic scheduling in \cite{Yu_TON}. Clearly, storage nodes without desired chunks cannot be selected, i.e., $\pi_{i,j,t} = 0 \text{ for } j\notin {\cal S}_i$. Finally, the cache has a capacity constraint $\sum_i d_{i,t}\le C$.
+
+Solving the cache optimization gives us the optimal cache content placement and scheduling policy to minimize file access latency. We note that the constraint $z_{i,t}\ge 0$ is not needed if none of the file is completely in the cache. However, the latency bound does not hold if the file is completely in the cache since in that case the bound is $z_{i,t}$ in the above expression. In order to avoid having indicators representing the constraint on $z_{i,t}=0$ if the file is in the cache, we only consider $z_{i,t}\ge 0$ making the latency bound hold irrespective of number of chunks in the cache.  This problem can be rewritten as follows.
+
+
+\noindent \hspace{0.2in} {\bf Distributed Storage with Caching:}
+
+\begin{eqnarray}
+& {\rm min} &  \sum_i \lambda_{i,t}z_{i,t}/\hat{\lambda}_t \nonumber\\&&+ \sum_i \sum_{j=1}^m \frac{\lambda_{i,t}\pi_{i,j,t}}{2\hat{\lambda}_t} \left[ X_{i,j,t} + \sqrt{X_{i,j,t}^2 + Y_{j,t}} \right]  \label{eq:c0} \\
+& {s.t.} & X_{i,j,t}=   \frac{1}{\mu_j} + \frac{ \Lambda_{j,t} \Gamma_j^2 }{2(1- \rho_{j,t})}-z_{i,t}, \ \forall j  \label{eq:c1}   \\
+&  & Y_{j,t}=  \sigma_j^2+\frac{ \Lambda_{j,t} \hat{\Gamma}_j^3}{3(1-\rho_{j,t})}+\frac{\Lambda_{j,t}^2\Gamma_j^4}{4(1- \rho_{j,t})^2}, \ \forall j \label{eq:c2}  \\
+& & \rho_{j,t} = \Lambda_{j,t}/\mu_j < 1; \ \Lambda_{j,t}=\sum_{i=1}^r \pi_{i,j,t}\lambda_{i,t}  \ \forall j \label{eq:c3} \\
+&  & \sum_{j=1}^m \pi_{i,j,t} = k_i-d_{i,t}; \ \pi_{i,j,t}\in [0,1]; z_{i,t}\ge 0,\\&& \pi_{i,j,t}=0 \ \forall j\notin \mathcal{S}_i, \sum_i d_{i,t}\le C, \  d_{i,t}\in \mathbb{Z}^+ \label{eq:c4}  \\
+& {\rm var.} & z_{i,t}, \ d_{i,t}, \ \pi_{i,j,t}, \ \forall i,j. \nonumber
+\end{eqnarray}

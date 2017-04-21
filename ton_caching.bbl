@@ -1,0 +1,158 @@
+\begin{thebibliography}{10}
+
+\bibitem{Akka}
+Akka.
+\newblock \url{http://akka.io/}.
+
+\bibitem{hadoop}
+Hadoop.
+\newblock \url{http://hadoop.apache.org/}.
+
+\bibitem{kryo}
+kryo.
+\newblock \url{https://code.google.com/p/kryo/}.
+
+\bibitem{varys}
+Varys.
+\newblock \url{https://github.com/coflow/varys/}.
+
+\bibitem{Yosemite}
+Yosemite.
+\newblock \url{https://github.com/zhanghan1990/Yosemite/}.
+
+\bibitem{YosemiteSim}
+Yosemitesim.
+\newblock \url{https://github.com/zhanghan1990/YosemiteSim/}.
+
+\bibitem{DCTCP}
+M.~Alizadeh, A.~Greenberg, D.~A. Maltz, J.~Padhye, P.~Patel, B.~Prabhakar,
+  S.~Sengupta, and M.~Sridharan.
+\newblock Data center tcp (dctcp).
+\newblock SIGCOMM '10, pages 63--74, 2010.
+
+\bibitem{pFabric}
+M.~Alizadeh, S.~Yang, M.~Sharif, S.~Katti, N.~McKeown, B.~Prabhakar, and
+  S.~Shenker.
+\newblock pfabric: Minimal near-optimal datacenter transport.
+\newblock SIGCOMM '13, pages 435--446, 2013.
+
+\bibitem{chen2000supply}
+Z.-L. Chen and N.~G. Hall.
+\newblock Supply chain scheduling: Assembly systems.
+\newblock Technical report, Working Paper, Department of Systems Engineering,
+  University of Pennsylvania, 2000.
+
+\bibitem{chowdhury2012coflow}
+M.~Chowdhury and I.~Stoica.
+\newblock Coflow: A networking abstraction for cluster applications.
+\newblock In {\em Proceedings of the 11th ACM Workshop on Hot Topics in
+  Networks}, pages 31--36. ACM, 2012.
+
+\bibitem{chowdhury2015efficient}
+M.~Chowdhury and I.~Stoica.
+\newblock Efficient coflow scheduling without prior knowledge.
+\newblock In {\em ACM SIGCOMM Computer Communication Review}, volume~45, pages
+  393--406. ACM, 2015.
+
+\bibitem{chowdhury2014efficient}
+M.~Chowdhury, Y.~Zhong, and I.~Stoica.
+\newblock Efficient coflow scheduling with varys.
+\newblock In {\em ACM SIGCOMM Computer Communication Review}, volume~44, pages
+  443--454. ACM, 2014.
+
+\bibitem{dean2008mapreduce}
+J.~Dean and S.~Ghemawat.
+\newblock Mapreduce: simplified data processing on large clusters.
+\newblock {\em Communications of the ACM}, 51(1):107--113, 2008.
+
+\bibitem{dogar2014decentralized}
+F.~R. Dogar, T.~Karagiannis, H.~Ballani, and A.~Rowstron.
+\newblock Decentralized task-aware scheduling for data center networks.
+\newblock In {\em ACM SIGCOMM Computer Communication Review}, volume~44, pages
+  431--442. ACM, 2014.
+
+\bibitem{PDQ}
+C.-Y. Hong, M.~Caesar, and P.~Godfrey.
+\newblock Finishing flows quickly with preemptive scheduling.
+\newblock {\em ACM SIGCOMM Computer Communication Review}, 42(4):127--138,
+  2012.
+
+\bibitem{huang2016sunflow}
+X.~S. Huang, X.~S. Sun, and T.~E. Ng.
+\newblock Sunflow: Efficient optical circuit scheduling for coflows.
+\newblock In {\em Proceedings of the 12th International on Conference on
+  emerging Networking EXperiments and Technologies}, pages 297--311. ACM, 2016.
+
+\bibitem{kumar2011lp}
+A.~Kumar, R.~Manokaran, M.~Tulsiani, and N.~K. Vishnoi.
+\newblock On lp-based approximability for strict csps.
+\newblock In {\em Proceedings of the twenty-second annual ACM-SIAM symposium on
+  Discrete Algorithms}, pages 1560--1573. Society for Industrial and Applied
+  Mathematics, 2011.
+
+\bibitem{luo2016towards}
+S.~Luo, H.~Yu, Y.~Zhao, S.~Wang, S.~Yu, and L.~Li.
+\newblock Towards practical and near-optimal coflow scheduling for data center
+  networks.
+\newblock {\em IEEE Transactions on Parallel and Distributed Systems},
+  27(11):3366--3380, 2016.
+
+\bibitem{mastrolilli2010minimizing}
+M.~Mastrolilli, M.~Queyranne, A.~S. Schulz, O.~Svensson, and N.~A. Uhan.
+\newblock Minimizing the sum of weighted completion times in a concurrent open
+  shop.
+\newblock {\em Operations Research Letters}, 38(5):390--395, 2010.
+
+\bibitem{L2DCT}
+A.~Munir, I.~Qazi, Z.~Uzmi, A.~Mushtaq, S.~Ismail, M.~Iqbal, and B.~Khan.
+\newblock Minimizing flow completion times in data centers.
+\newblock In {\em INFOCOM, 2013 Proceedings IEEE}, pages 2157--2165, April
+  2013.
+
+\bibitem{qiu2015minimizing}
+Z.~Qiu, C.~Stein, and Y.~Zhong.
+\newblock Minimizing the total weighted completion time of coflows in
+  datacenter networks.
+\newblock In {\em Proceedings of the 27th ACM symposium on Parallelism in
+  Algorithms and Architectures}, pages 294--303. ACM, 2015.
+
+\bibitem{qiu2016experimental}
+Z.~Qiu, C.~Stein, and Y.~Zhong.
+\newblock Experimental analysis of algorithms for coflow scheduling⋆.
+\newblock {\em arXiv preprint arXiv:1603.07981}, 2016.
+
+\bibitem{roemer2006note}
+T.~A. Roemer.
+\newblock A note on the complexity of the concurrent open shop problem.
+\newblock {\em Journal of scheduling}, 9(4):389--396, 2006.
+
+\bibitem{tolia2006architecture}
+N.~Tolia, M.~Kaminsky, D.~G. Andersen, and S.~Patil.
+\newblock An architecture for internet data transfer.
+\newblock In {\em NSDI}, 2006.
+
+\bibitem{D2TCP}
+B.~Vamanan, J.~Hasan, and T.~Vijaykumar.
+\newblock Deadline-aware datacenter tcp (d2tcp).
+\newblock SIGCOMM '12, pages 115--126, 2012.
+
+\bibitem{D3}
+C.~Wilson, H.~Ballani, T.~Karagiannis, and A.~Rowtron.
+\newblock Better never than late: Meeting deadlines in datacenter networks.
+\newblock SIGCOMM '11, pages 50--61, 2011.
+
+\bibitem{zhang2016coda}
+H.~Zhang, L.~Chen, B.~Yi, K.~Chen, M.~Chowdhury, and Y.~Geng.
+\newblock Coda: Toward automatically identifying and scheduling coflows in the
+  dark.
+\newblock In {\em Proceedings of the 2016 conference on ACM SIGCOMM 2016
+  Conference}, pages 160--173. ACM, 2016.
+
+\bibitem{zhang2015more}
+H.~Zhang, X.~Shi, X.~Yin, F.~Ren, and Z.~Wang.
+\newblock More load, more differentiation—a design principle for
+  deadline-aware congestion control.
+\newblock In {\em 2015 IEEE Conference on Computer Communications (INFOCOM)},
+  pages 127--135. IEEE, 2015.
+
+\end{thebibliography}
