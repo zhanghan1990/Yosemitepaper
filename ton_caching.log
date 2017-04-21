@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.9.28)  21 APR 2017 09:53
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.9.28)  21 APR 2017 11:09
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -539,18 +539,16 @@ Missing character: There is no † in font ptmr7t!
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no ” in font ptmr7t!
-) [7
-
-] (./ton_caching.aux)
+) [7] (./ton_caching.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 5382 strings out of 493014
- 82336 string characters out of 6133351
- 159183 words of memory out of 5000000
- 8818 multiletter control sequences out of 15000+600000
+ 5388 strings out of 493014
+ 82440 string characters out of 6133351
+ 159207 words of memory out of 5000000
+ 8824 multiletter control sequences out of 15000+600000
  46733 words of font info for 106 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  38i,10n,39p,1213b,550s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -569,7 +567,7 @@ texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2016/texmf-dist
 /fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/ty
 pe1/urw/times/utmr8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/ti
 mes/utmri8a.pfb>
-Output written on ton_caching.pdf (7 pages, 1542907 bytes).
+Output written on ton_caching.pdf (7 pages, 1544053 bytes).
 PDF statistics:
  275 PDF objects out of 1000 (max. 8388607)
  139 compressed objects within 2 object streams

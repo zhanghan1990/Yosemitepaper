@@ -54,6 +54,12 @@ M.~Chowdhury and I.~Stoica.
 \newblock In {\em ACM SIGCOMM Computer Communication Review}, volume~45, pages
   393--406. ACM, 2015.
 
+\bibitem{chowdhury2011managing}
+M.~Chowdhury, M.~Zaharia, J.~Ma, M.~I. Jordan, and I.~Stoica.
+\newblock Managing data transfers in computer clusters with orchestra.
+\newblock In {\em ACM SIGCOMM Computer Communication Review}, volume~41, pages
+  98--109. ACM, 2011.
+
 \bibitem{chowdhury2014efficient}
 M.~Chowdhury, Y.~Zhong, and I.~Stoica.
 \newblock Efficient coflow scheduling with varys.
@@ -64,6 +70,12 @@ M.~Chowdhury, Y.~Zhong, and I.~Stoica.
 J.~Dean and S.~Ghemawat.
 \newblock Mapreduce: simplified data processing on large clusters.
 \newblock {\em Communications of the ACM}, 51(1):107--113, 2008.
+
+\bibitem{dimakis2006decentralized}
+A.~G. Dimakis, V.~Prabhakaran, and K.~Ramchandran.
+\newblock Decentralized erasure codes for distributed networked storage.
+\newblock {\em IEEE/ACM Transactions on Networking (TON)}, 14(SI):2809--2816,
+  2006.
 
 \bibitem{dogar2014decentralized}
 F.~R. Dogar, T.~Karagiannis, H.~Ballani, and A.~Rowstron.
@@ -90,6 +102,26 @@ A.~Kumar, R.~Manokaran, M.~Tulsiani, and N.~K. Vishnoi.
   Discrete Algorithms}, pages 1560--1573. Society for Industrial and Applied
   Mathematics, 2011.
 
+\bibitem{Latency}
+Latency.
+\newblock Latency is everywhere and it costs you sales - how to crush it.
+\newblock
+  http://highscalability.com/latency-everywhere-and-it-costs-you-sales-how-crush-it,
+  2009.
+
+\bibitem{CloudMirror}
+J.~Lee, Y.~Turner, M.~Lee, L.~Popa, S.~Banerjee, J.-M. Kang, and P.~Sharma.
+\newblock Application-driven bandwidth guarantees in datacenters.
+\newblock In {\em Proceedings of the 2014 ACM conference on SIGCOMM}, pages
+  467--478. ACM, 2014.
+
+\bibitem{lin2010secure}
+H.-Y. Lin and W.-G. Tzeng.
+\newblock A secure decentralized erasure code for distributed networked
+  storage.
+\newblock {\em IEEE transactions on Parallel and Distributed Systems},
+  21(11):1586--1594, 2010.
+
 \bibitem{luo2016towards}
 S.~Luo, H.~Yu, Y.~Zhao, S.~Wang, S.~Yu, and L.~Li.
 \newblock Towards practical and near-optimal coflow scheduling for data center
@@ -102,6 +134,13 @@ M.~Mastrolilli, M.~Queyranne, A.~S. Schulz, O.~Svensson, and N.~A. Uhan.
 \newblock Minimizing the sum of weighted completion times in a concurrent open
   shop.
 \newblock {\em Operations Research Letters}, 38(5):390--395, 2010.
+
+\bibitem{munir2014friends}
+A.~Munir, G.~Baig, S.~M. Irteza, I.~A. Qazi, A.~X. Liu, and F.~R. Dogar.
+\newblock Friends, not foes: synthesizing existing transport strategies for
+  data center networks.
+\newblock In {\em ACM SIGCOMM Computer Communication Review}, volume~44, pages
+  491--502. ACM, 2014.
 
 \bibitem{L2DCT}
 A.~Munir, I.~Qazi, Z.~Uzmi, A.~Mushtaq, S.~Ismail, M.~Iqbal, and B.~Khan.

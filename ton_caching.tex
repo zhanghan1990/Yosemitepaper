@@ -175,24 +175,24 @@ Nowadays, applications (map-reduce, distributed storage, etc) in data center nee
 However, network resources in data center network are limited, so efficient network resources schedule methods are needed. Recently, the proposed
 application level abstraction coflow tries to regard flow set as a whole, so the transfer latency of application will be reduced. This abstraction is better than flow level
 schedule method because it considers the semantics of the application partly. 
-However, the scheduling method of coflow only considers network condition and ignore application semantics. Different applications in data center may have 
-different level of importance, so scheduling only depends on network condition is not enough. In this paper, we propose, when scheduling coflow, we should also take the semantics
-of application into consideration. We incorporate weight to present the importance of application and try to minimize weight completion time of coflow.  According to this, we propose Yosemite-a framework that aims to minimize weight coflow completion time. Simulation shows that Yosemite performs about 20\%-50\% better than Varys to minimize coflow completion time. We also deploy Yosemite system on our open-stack testbed, evaluation shows that for the file backup applications, Yosemite performs about XX better than Varys.
+However, more application semantics should be considered such as the importance of application. This is because different applications in data center may have 
+different level of importance, scheduling only depends on network condition and coflow set are not enough. In this paper, we advocate that when scheduling coflow, we should also take the importance
+of application into consideration. We incorporate weight to present the importance of application and try to minimize weight completion time of coflow.  According to this, we propose Yosemite-a framework that aims to minimize coflow weight completion time. Simulation shows that Yosemite performs about 20\%-50\% better than Varys to minimize coflow completion time. We also deploy Yosemite system on our open-stack testbed, evaluation shows that for the file backup applications, Yosemite performs about XX better than Varys.
 
 \end{abstract}
 
 \section{Introduction}\label{introduction}
 
-Data center is now used as the infrastructure of many applications, including file storage, map-reduce, etc. These applications need the data center
-network to provide them low latency and high throughput. However, data center can not satisfy all the demands of every application, due to the limited resources of the network.
+Data center is now used as the infrastructure of many applications, including file storage\cite{lin2010secure,dimakis2006decentralized}, map-reduce\cite{dean2008mapreduce}, etc. These applications need the data center
+network to provide them low latency and high throughput \cite{Latency,CloudMirror,munir2014friends}. However, data center can not satisfy all the demands of every application, due to the limited resources of the network.
 Many schedule methods are proposed to solve this problem.
 
-Flow level scheduling method such as PDQ and pFabric implement SJF policy to preempt large flows, as a result, average flow completion time will reduce and applications
-latency will reach low level.  Although, flow level scheduling method can optimize the latency of applications to some extent, it has some deficiencies. On one hand, applications
-in data center have dozens of flows and flow level optimization can lead to large ones lagging the performance of application. One the hand, flow level scheduling is too frequent and
-this exerts large pressure to scheduler, especially for centralized methods, which need to compute the schedule results as fast as possible.
+Flow level scheduling method such as PDQ\cite{PDQ} and pFabric\cite{pFabric} implement SJF policy to let short flows preempt the bandwidth of large flows. As a result, average flow completion time will reduce and applications
+latency will reduce.  Although, flow level scheduling method can optimize the latency of applications to some extent, it has some deficiencies\cite{chowdhury2011managing}. On one hand, applications
+in data center have dozens of flows and flow level optimization can lead to some late-finishing ones lagging the performance of application. One the hand, flow level scheduling is too frequent and
+this can exert large pressure to scheduler, especially for centralized methods, which need to compute the schedule results as fast as possible.
 
-To over the defects of flow level optimization. The recently proposed network abstraction coflow takes application flows entirely . Jobs from one or more frameworks create multiple coflows in a shared cluster. The coflow schedule methods regard the flow sets as an entirety. Flows belonging same set sharing same priority.  This method is attractive as even the fifo based method can improve
+To over the defects of flow level optimization. The recently proposed network abstraction coflow regard job flow set as a whole . Jobs from one or more frameworks create multiple coflows in a shared cluster. The coflow schedule methods regard the flow sets as an entirety. Flows belonging same set sharing same priority.  This method is attractive as even the fifo based method can improve
 much over the state-of-art flow scheduling strategy on the performance of job completion. Varys incorporates network bottleneck, it considers the network bottleneck. It uses SEBF which is known
 as Smallest-Effective-Bottleneck-First  heuristic to schedule coflow and use Minimum-Allocation-for-Desired-Duration (MADD) to allocate rates to flows. Varys is indeed a clairvoyant method which means scheduler should known coflows'  width and size of every flows beforehand.  We think this assumption is practical for some applications such as data storage and data backup whose data size can be known by users beforehand.
 
