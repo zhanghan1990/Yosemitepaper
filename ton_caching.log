@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.9.28)  21 APR 2017 12:30
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.9.28)  22 APR 2017 15:00
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -390,6 +390,21 @@ Package: algorithmic 2009/08/24 v0.1 Document Style `algorithmic'
 
 LaTeX Warning: Label `weight_completion_gamma' multiply defined.
 
+
+LaTeX Warning: Label `evalution_principle_b' multiply defined.
+
+
+LaTeX Warning: Label `evalution_cases_principle_fig' multiply defined.
+
+
+LaTeX Warning: Label `evalution_principle_b' multiply defined.
+
+
+LaTeX Warning: Label `evalution_principle_w' multiply defined.
+
+
+LaTeX Warning: Label `evalution_cases_principle_fig' multiply defined.
+
 )
 \openout1 = `ton_caching.aux'.
 
@@ -532,23 +547,232 @@ File: ./figs/background/system.pdf Graphic file (type pdf)
 Package pdftex.def Info: ./figs/background/system.pdf used on input line 559.
 (pdftex.def)             Requested size: 201.60077pt x 151.19731pt.
  [5 <./figs/performance/online_offline.pdf>]
-(./ton_caching.bbl [6 <./figs/background/system.pdf>]
+Package epstopdf Info: Source file: <./figs/real/real_type.eps>
+(epstopdf)                    date: 2017-04-22 14:58:04
+(epstopdf)                    size: 39073 bytes
+(epstopdf)             Output file: <./figs/real/real_type-eps-converted-to.pdf
+>
+(epstopdf)                    date: 2017-04-22 14:58:26
+(epstopdf)                    size: 24094 bytes
+(epstopdf)             Command: <repstopdf --outfile=./figs/real/real_type-eps-
+converted-to.pdf ./figs/real/real_type.eps>
+(epstopdf)             \includegraphics on input line 676.
+Package epstopdf Info: Output file is already uptodate.
+
+<./figs/real/real_type-eps-converted-to.pdf, id=126, 867.24pt x 433.62pt>
+File: ./figs/real/real_type-eps-converted-to.pdf Graphic file (type pdf)
+
+<use ./figs/real/real_type-eps-converted-to.pdf>
+Package pdftex.def Info: ./figs/real/real_type-eps-converted-to.pdf used on inp
+ut line 676.
+(pdftex.def)             Requested size: 361.34999pt x 180.67676pt.
+Package epstopdf Info: Source file: <./figs/real/CDF_compare.eps>
+(epstopdf)                    date: 2017-04-22 14:58:07
+(epstopdf)                    size: 24125 bytes
+(epstopdf)             Output file: <./figs/real/CDF_compare-eps-converted-to.p
+df>
+(epstopdf)                    date: 2017-04-22 14:58:27
+(epstopdf)                    size: 16984 bytes
+(epstopdf)             Command: <repstopdf --outfile=./figs/real/CDF_compare-ep
+s-converted-to.pdf ./figs/real/CDF_compare.eps>
+(epstopdf)             \includegraphics on input line 679.
+Package epstopdf Info: Output file is already uptodate.
+
+<./figs/real/CDF_compare-eps-converted-to.pdf, id=127, 325.215pt x 433.62pt>
+File: ./figs/real/CDF_compare-eps-converted-to.pdf Graphic file (type pdf)
+
+<use ./figs/real/CDF_compare-eps-converted-to.pdf>
+Package pdftex.def Info: ./figs/real/CDF_compare-eps-converted-to.pdf used on i
+nput line 679.
+(pdftex.def)             Requested size: 137.31255pt x 183.08516pt.
+Package epstopdf Info: Source file: <./figs/maxlength/total_completion_time.eps
+>
+(epstopdf)                    date: 2017-03-16 09:19:56
+(epstopdf)                    size: 38671 bytes
+(epstopdf)             Output file: <./figs/maxlength/total_completion_time-eps
+-converted-to.pdf>
+(epstopdf)                    date: 2017-03-16 09:23:50
+(epstopdf)                    size: 24522 bytes
+(epstopdf)             Command: <repstopdf --outfile=./figs/maxlength/total_com
+pletion_time-eps-converted-to.pdf ./figs/maxlength/total_completion_time.eps>
+(epstopdf)             \includegraphics on input line 689.
+Package epstopdf Info: Output file is already uptodate.
+
+<./figs/maxlength/total_completion_time-eps-converted-to.pdf, id=128, 578.16pt 
+x 433.62pt>
+File: ./figs/maxlength/total_completion_time-eps-converted-to.pdf Graphic file 
+(type pdf)
+ <use ./figs/maxlength/total_completion_time-eps-converted-to.pdf>
+Package pdftex.def Info: ./figs/maxlength/total_completion_time-eps-converted-t
+o.pdf used on input line 689.
+(pdftex.def)             Requested size: 119.24506pt x 89.4286pt.
+Package epstopdf Info: Source file: <./figs/maxlength/large_completion_time.eps
+>
+(epstopdf)                    date: 2017-03-16 09:19:57
+(epstopdf)                    size: 38713 bytes
+(epstopdf)             Output file: <./figs/maxlength/large_completion_time-eps
+-converted-to.pdf>
+(epstopdf)                    date: 2017-03-16 09:23:50
+(epstopdf)                    size: 24533 bytes
+(epstopdf)             Command: <repstopdf --outfile=./figs/maxlength/large_com
+pletion_time-eps-converted-to.pdf ./figs/maxlength/large_completion_time.eps>
+(epstopdf)             \includegraphics on input line 692.
+Package epstopdf Info: Output file is already uptodate.
+
+<./figs/maxlength/large_completion_time-eps-converted-to.pdf, id=129, 578.16pt 
+x 433.62pt>
+File: ./figs/maxlength/large_completion_time-eps-converted-to.pdf Graphic file 
+(type pdf)
+ <use ./figs/maxlength/large_completion_time-eps-converted-to.pdf>
+Package pdftex.def Info: ./figs/maxlength/large_completion_time-eps-converted-t
+o.pdf used on input line 692.
+(pdftex.def)             Requested size: 119.24506pt x 89.4286pt.
+Package epstopdf Info: Source file: <./figs/maxlength/short_completion_time.eps
+>
+(epstopdf)                    date: 2017-03-16 09:19:56
+(epstopdf)                    size: 38687 bytes
+(epstopdf)             Output file: <./figs/maxlength/short_completion_time-eps
+-converted-to.pdf>
+(epstopdf)                    date: 2017-03-16 09:23:51
+(epstopdf)                    size: 24527 bytes
+(epstopdf)             Command: <repstopdf --outfile=./figs/maxlength/short_com
+pletion_time-eps-converted-to.pdf ./figs/maxlength/short_completion_time.eps>
+(epstopdf)             \includegraphics on input line 695.
+Package epstopdf Info: Output file is already uptodate.
+
+<./figs/maxlength/short_completion_time-eps-converted-to.pdf, id=130, 578.16pt 
+x 433.62pt>
+File: ./figs/maxlength/short_completion_time-eps-converted-to.pdf Graphic file 
+(type pdf)
+ <use ./figs/maxlength/short_completion_time-eps-converted-to.pdf>
+Package pdftex.def Info: ./figs/maxlength/short_completion_time-eps-converted-t
+o.pdf used on input line 695.
+(pdftex.def)             Requested size: 119.24506pt x 89.4286pt.
+Package epstopdf Info: Source file: <./figs/maxlength/improvement.eps>
+(epstopdf)                    date: 2017-03-16 09:19:55
+(epstopdf)                    size: 32293 bytes
+(epstopdf)             Output file: <./figs/maxlength/improvement-eps-converted
+-to.pdf>
+(epstopdf)                    date: 2017-03-16 09:23:51
+(epstopdf)                    size: 20902 bytes
+(epstopdf)             Command: <repstopdf --outfile=./figs/maxlength/improveme
+nt-eps-converted-to.pdf ./figs/maxlength/improvement.eps>
+(epstopdf)             \includegraphics on input line 697.
+Package epstopdf Info: Output file is already uptodate.
+
+<./figs/maxlength/improvement-eps-converted-to.pdf, id=131, 578.16pt x 433.62pt
+>
+File: ./figs/maxlength/improvement-eps-converted-to.pdf Graphic file (type pdf)
+
+ <use ./figs/maxlength/improvement-eps-converted-to.pdf>
+Package pdftex.def Info: ./figs/maxlength/improvement-eps-converted-to.pdf used
+ on input line 697.
+(pdftex.def)             Requested size: 119.24506pt x 89.4286pt.
+Package epstopdf Info: Source file: <./figs/width/total_completion_time.eps>
+(epstopdf)                    date: 2017-03-19 10:59:55
+(epstopdf)                    size: 46419 bytes
+(epstopdf)             Output file: <./figs/width/total_completion_time-eps-con
+verted-to.pdf>
+(epstopdf)                    date: 2017-03-19 11:00:39
+(epstopdf)                    size: 24194 bytes
+(epstopdf)             Command: <repstopdf --outfile=./figs/width/total_complet
+ion_time-eps-converted-to.pdf ./figs/width/total_completion_time.eps>
+(epstopdf)             \includegraphics on input line 708.
+Package epstopdf Info: Output file is already uptodate.
+
+<./figs/width/total_completion_time-eps-converted-to.pdf, id=132, 578.16pt x 43
+3.62pt>
+File: ./figs/width/total_completion_time-eps-converted-to.pdf Graphic file (typ
+e pdf)
+ <use ./figs/width/total_completion_time-eps-converted-to.pdf>
+Package pdftex.def Info: ./figs/width/total_completion_time-eps-converted-to.pd
+f used on input line 708.
+(pdftex.def)             Requested size: 119.24506pt x 89.4286pt.
+Package epstopdf Info: Source file: <./figs/width/large_completion_time.eps>
+(epstopdf)                    date: 2017-03-19 10:58:45
+(epstopdf)                    size: 46419 bytes
+(epstopdf)             Output file: <./figs/width/large_completion_time-eps-con
+verted-to.pdf>
+(epstopdf)                    date: 2017-03-19 11:00:39
+(epstopdf)                    size: 24195 bytes
+(epstopdf)             Command: <repstopdf --outfile=./figs/width/large_complet
+ion_time-eps-converted-to.pdf ./figs/width/large_completion_time.eps>
+(epstopdf)             \includegraphics on input line 711.
+Package epstopdf Info: Output file is already uptodate.
+
+<./figs/width/large_completion_time-eps-converted-to.pdf, id=133, 578.16pt x 43
+3.62pt>
+File: ./figs/width/large_completion_time-eps-converted-to.pdf Graphic file (typ
+e pdf)
+ <use ./figs/width/large_completion_time-eps-converted-to.pdf>
+Package pdftex.def Info: ./figs/width/large_completion_time-eps-converted-to.pd
+f used on input line 711.
+(pdftex.def)             Requested size: 119.24506pt x 89.4286pt.
+Package epstopdf Info: Source file: <./figs/width/short_completion_time.eps>
+(epstopdf)                    date: 2017-03-19 10:58:44
+(epstopdf)                    size: 46486 bytes
+(epstopdf)             Output file: <./figs/width/short_completion_time-eps-con
+verted-to.pdf>
+(epstopdf)                    date: 2017-03-19 11:00:40
+(epstopdf)                    size: 24691 bytes
+(epstopdf)             Command: <repstopdf --outfile=./figs/width/short_complet
+ion_time-eps-converted-to.pdf ./figs/width/short_completion_time.eps>
+(epstopdf)             \includegraphics on input line 714.
+Package epstopdf Info: Output file is already uptodate.
+
+<./figs/width/short_completion_time-eps-converted-to.pdf, id=134, 578.16pt x 43
+3.62pt>
+File: ./figs/width/short_completion_time-eps-converted-to.pdf Graphic file (typ
+e pdf)
+ <use ./figs/width/short_completion_time-eps-converted-to.pdf>
+Package pdftex.def Info: ./figs/width/short_completion_time-eps-converted-to.pd
+f used on input line 714.
+(pdftex.def)             Requested size: 119.24506pt x 89.4286pt.
+Package epstopdf Info: Source file: <./figs/width/improvement.eps>
+(epstopdf)                    date: 2017-03-19 10:59:54
+(epstopdf)                    size: 38576 bytes
+(epstopdf)             Output file: <./figs/width/improvement-eps-converted-to.
+pdf>
+(epstopdf)                    date: 2017-03-19 11:00:40
+(epstopdf)                    size: 20302 bytes
+(epstopdf)             Command: <repstopdf --outfile=./figs/width/improvement-e
+ps-converted-to.pdf ./figs/width/improvement.eps>
+(epstopdf)             \includegraphics on input line 716.
+Package epstopdf Info: Output file is already uptodate.
+
+<./figs/width/improvement-eps-converted-to.pdf, id=135, 578.16pt x 433.62pt>
+File: ./figs/width/improvement-eps-converted-to.pdf Graphic file (type pdf)
+
+<use ./figs/width/improvement-eps-converted-to.pdf>
+Package pdftex.def Info: ./figs/width/improvement-eps-converted-to.pdf used on 
+input line 716.
+(pdftex.def)             Requested size: 119.24506pt x 89.4286pt.
+ (./ton_caching.bbl [6 <./figs/background/system.pdf>] [7 <./figs/real/real_typ
+e-eps-converted-to.pdf> <./figs/real/CDF_compare-eps-converted-to.pdf> <./figs/
+maxlength/total_completion_time-eps-converted-to.pdf> <./figs/maxlength/large_c
+ompletion_time-eps-converted-to.pdf> <./figs/maxlength/short_completion_time-ep
+s-converted-to.pdf> <./figs/maxlength/improvement-eps-converted-to.pdf> <./figs
+/width/total_completion_time-eps-converted-to.pdf> <./figs/width/large_completi
+on_time-eps-converted-to.pdf> <./figs/width/short_completion_time-eps-converted
+-to.pdf> <./figs/width/improvement-eps-converted-to.pdf>]
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no ‹ in font ptmr7t!
 Missing character: There is no † in font ptmr7t!
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no ” in font ptmr7t!
-) [7] (./ton_caching.aux)
+) [8
+
+] (./ton_caching.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 5388 strings out of 493014
- 82440 string characters out of 6133351
- 159207 words of memory out of 5000000
- 8824 multiletter control sequences out of 15000+600000
+ 5441 strings out of 493014
+ 84975 string characters out of 6133351
+ 156317 words of memory out of 5000000
+ 8867 multiletter control sequences out of 15000+600000
  46733 words of font info for 106 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  38i,10n,39p,1213b,550s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -567,10 +791,10 @@ texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2016/texmf-dist
 /fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/ty
 pe1/urw/times/utmr8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/ti
 mes/utmri8a.pfb>
-Output written on ton_caching.pdf (7 pages, 1543929 bytes).
+Output written on ton_caching.pdf (8 pages, 1737008 bytes).
 PDF statistics:
- 275 PDF objects out of 1000 (max. 8388607)
- 139 compressed objects within 2 object streams
+ 773 PDF objects out of 1000 (max. 8388607)
+ 208 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
- 16 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 66 words of extra memory for PDF output out of 10000 (max. 10000000)
 
