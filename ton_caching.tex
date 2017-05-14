@@ -882,7 +882,7 @@ As the original trace does not contain information of weight setting, we randoml
 The original cluster had a 10 : 1 core-to-rack oversubscription ratio with a total bisection bandwidth of 300 Gbps.
  Due to hardware limits, in our testbed experiment, we limit the bandwidth of ingress and egress port capacity to 1Gbps 
  but maintain the characters of the original traffic. 
-In our experiment, coflows are categorized to be four types in terms of their length (the size of the largest flow in bytes for a coflow) and width (the number of parallel flows in a coflow): Narrow\&Short, Narrow\&Long, Wide\&Short, and Wide\&Long, where a coflow is considered to be short if its length is less than 100 MB, and narrow if it involves at most 20 flows.
+In our experiment, coflows are categorized to be four types in terms of their length (the size of the largest flow in bytes for a coflow) and width (the number of parallel flows in a coflow): Narrow\&Short(N-S), Narrow\&Long(N-L), Wide\&Short(W-S), and Wide\&Long(W-L), where a coflow is considered to be short if its length is less than 100 MB, and narrow if it involves at most 20 flows.
 
 \textbf{Metrics}. In our experiment,  metric for comparison is the improvement in average coflow weight completion time of coflows and jobs (when its last task finished) in the workload. The definition of improvement A over B is
 
@@ -909,6 +909,56 @@ In our experiment,  default baseline is TCP fair-sharing.
 \label{overheads_fig}
 \vspace{-0.1 in}
 \end{figure}
+\begin{figure}[b]
+\begin{center}
+\includegraphics [width=0.8\columnwidth] {./figs/fake/fake3.eps}
+\caption{[cloud] performance comparison between Yosemite and Yosemite-sim under the same  setting}
+\label{sim-real}
+\end{center}
+\end{figure}
+
+\begin{figure*}[!t]
+\centering
+\subfigure[improvement of wcct] {\includegraphics[width=4.9 in]{./figs/real/weight_real_type.eps}}
+\hspace{0.1in}
+\subfigure[Distribution of wcct(s)] {\includegraphics[width=2.05 in]{./figs/real/weight_CDF_compare.eps}}
+\caption{[Simulation] Detail of wcct for Yosemite, Barrat, Varys,  Aalo, TCP fair-sharing under real data center traffic trace,TCP fair-sharing is selected as the baseline.}
+\vspace{-0.1 in}
+\label{evalution_real_weight_fig}
+\vspace{-0.1 in}
+\end{figure*}
+
+
+
+\begin{figure*}[!t]
+\centering
+\subfigure[improvement of cct] {\includegraphics[width=4.9 in]{./figs/completion/real_type.eps}}
+\subfigure[Distribution of cct(s)] {\includegraphics[width=2.1 in]{./figs/completion/CDF_compare.eps}}
+\caption{[Simulation] Detail of cct for Yosemite, Barrat, Varys,  Aalo, TCP fair-sharing under real data center traffic trace, TCP fair-sharing is selected as the baseline.}
+\label{evalution_real_fig}
+\end{figure*}
+
+ \begin{figure*}[!t]
+\centering
+\subfigure[Impact of coflow length] {\includegraphics[width=1.65 in]{./figs/different/fraclength.eps}}
+\hspace{0.1in}
+\subfigure[Impact of coflow width] {\includegraphics[width=1.65 in]{./figs/different/fracwidth.eps}}
+\hspace{0.1in}
+\subfigure[Impact of coflow weight] {\includegraphics[width=1.65 in]{./figs/different/weight.eps}}
+\vspace{-0.1 in}
+\subfigure[Impact of coflow concurrency] {\includegraphics[width=1.65 in]{./figs/different/concurrent.eps}}
+\caption{[Simulation] Yosemite performance comparison with Baraat and Varys, Aalo under different settings, TCP fair-sharing is selected as the baseline.}
+\label{evalution_cases_different_fig}
+\vspace{-0.1 in}
+\end{figure*}
+  \begin{figure}[b]
+\begin{center}
+\includegraphics [width=1.0\columnwidth] {./figs/fake/fake1.eps}
+\caption{ [Simulation] performance comparison between the LP-based solution and Yosemite}
+\label{LP-based-fig}
+\end{center}
+\end{figure}
+
 
 \textbf{Open source}. To make our experiment repeatable, we publish main code of Yosemite as well as Yosemite-Sim.
 Dockerfile which used to generate Yosemite docker image is also included at the source code and all the sources can
@@ -945,18 +995,9 @@ We can see for peak load, when active coflows is 140,  computation time of the s
 average computation time is less than 17ms. 
 Messages transferring between comm server is the main overheads of Yosemite system.
 Error messages occurs when component crashes and server resources are insufficient.
-As 80 VMs in our platform will reach full load, we start $1\sim 3$ docker at each VM to get a slightly larger scale experiment.
+As 80 VMs in our platform will reach full load, we start $1\sim 3$ dockers at each VM to get a slightly larger scale experiment.
 Fig. \ref{overheads_fig}(b) shows the error messages frequency. 
 We can see that when the concurrent worker number is over 200, peak error messages is over 4k/s.
-
-\begin{figure}[b]
-\begin{center}
-\includegraphics [width=0.8\columnwidth] {./figs/fake/fake3.eps}
-\caption{[cloud] performance comparison between Yosemite and Yosemite-sim under the same  setting}
-\label{sim-real}
-\end{center}
-\end{figure}
-
 
 
 Write down the trace of distribute file application and let the simulator run the trace under the same parameter.
@@ -965,56 +1006,34 @@ We can see performance gap between cloud platform and Yosemite is narrow($<15\%$
 In the following section, we use our trace-driven simulator to do some larger experiments.
 
 \subsection{Trace-driven simulation} 
-We use the trace from Facebook Hadoop/Hive trace to test the performance of Yosemite. Weight in our experiment are uniform distribution generated between 1 and 10. We repeat the experiment 100 times and Fig .\ref{evalution_real_weight_fig} shows the result of the weight coflow completion time of Yosemite, Barrat, Varys,  Aalo, perflow fairness. Perflow fairness is selected as the baseline.
-
-\begin{figure*}[!t]
-\centering
-\subfigure[Improvement weight coflow completion time comparison] {\includegraphics[width=5 in]{./figs/real/weight_real_type.eps}}
-\hspace{0.1in}
-\subfigure[Weight coflow completion time comparison(s)] {\includegraphics[width=1.9 in]{./figs/real/weight_CDF_compare.eps}}
-\caption{Detail of the weight coflow completion time of Yosemite, Barrat, Varys,  Aalo, perflow fairness with real data center traffic trace, perflow fairness is selected as the baseline.}
-\vspace{-0.1 in}
-\label{evalution_real_weight_fig}
-\vspace{-0.1 in}
-\end{figure*}
+In this section, we use trace of facebook \cite{chowdhury2014efficient} to test the performance of Yosemite.
+As the original trace doesn't include weight information, we randomly generate weight ranging from 1 to 10.
+Repeat the process 100 times and Fig .\ref{evalution_real_weight_fig} shows the performance comparison between Yosemite, Barrat, Varys,  Aalo and TCP fair-sharing. 
+Note TCP fair-sharing is selected as the baseline in this group.
 
 
-
-\begin{figure*}[!t]
-\centering
-\subfigure[Improvement of coflow completion time] {\includegraphics[width=5 in]{./figs/completion/real_type.eps}}
-\subfigure[coflow completion time comparison(s)] {\includegraphics[width=1.9 in]{./figs/completion/CDF_compare.eps}}
-\caption{Detail of the coflow completion time of Yosemite, Barrat, Varys,  Aalo, perflow fairness with real data center traffic trace, perflow fairness is selected as the baseline.}
-\label{evalution_real_fig}
-\end{figure*}
-
- \begin{figure*}[!t]
-\centering
-\subfigure[Impact of coflow length] {\includegraphics[width=1.65 in]{./figs/different/fraclength.eps}}
-\hspace{0.1in}
-\subfigure[Impact of coflow width] {\includegraphics[width=1.65 in]{./figs/different/fracwidth.eps}}
-\hspace{0.1in}
-\subfigure[Impact of coflow weight] {\includegraphics[width=1.65 in]{./figs/different/weight.eps}}
-\vspace{-0.1 in}
-\subfigure[Impact of coflow concurrency] {\includegraphics[width=1.65 in]{./figs/different/concurrent.eps}}
-\caption{Yosemite performance comparison with Baraat and Varys, Aalo under different settings, perflow fairness is selected as the baseline.}
-\label{evalution_cases_different_fig}
-\vspace{-0.1 in}
-\end{figure*}
-  \begin{figure}[b]
-\begin{center}
-\includegraphics [width=1.0\columnwidth] {./figs/fake/fake1.eps}
-\caption{performance comparison between the LP-based solution and Yosemite}
-\label{LP-based-fig}
-\end{center}
-\end{figure}
-
- Fig. \ref{evalution_real_weight_fig}(a) implies that Yosemite greatly reduces the average and 95th percentile weight coflow completion time  across all coflow types. The improvement factors of Yosemite on average weight coflow completion time are 3.5 (Narrow\&Short),1.6 (Narrow\&Long), 1.7 (Wide\&Short), 1.4  (Wide\&Long), and 1.5 (ALL), while that of Varys are 2.4 (Narrow\&Short),0.9 (Narrow\&Long), 1.2 (Wide\&Short), 1.3 (Wide\&Long), and 1.2 (ALL). We generate weight 100 times and repeat the experiment, the error bar indicates the maximum and minimum  improvement. To eliminate the  influence of extreme value, we get the 95th of the improvement which gets rid of the top and last 2.5\% value. For the 95th situation, we can find that Yosemite has the improvement factors on average weight coflow completion time  of 30 (Narrow\&Short),20 (Narrow\&Long), 2.5 (Wide\&Short), 1.5  (Wide\&Long), and 2.5 (ALL), however Varys has 22 (Narrow\&Short),14 (Narrow\&Long), 2.1 (Wide\&Short), 1.2  (Wide\&Long), and 2.1 (ALL) and other 
- method such as Aalo and Barrat performs even worse than Varys.  Fig. \ref{evalution_real_weight_fig}(a) also indicates that FIFO\_LM based solution such as Barrat only accelerates the transmission of long task (including Narrow\&Long and Wide\&Long), however, for the short ones, it has poor performance. This is because that Barrat uses FIFO\_LM based solution can lead to head-of-line blocking problem especially for the heterogenous coflows which has various flow length, width and arrival time.
+ Fig. \ref{evalution_real_weight_fig}(a) implies that Yosemite greatly reduces the average wcct across all coflow types. 
+ The improvement factors of Yosemite are 3.5 (Narrow\&Short), 1.6 (Narrow\&Long), 1.7 (Wide\&Short), 1.4  (Wide\&Long) and 1.5 (ALL), 
+ while that of Varys are 2.4 (Narrow\&Short), 0.9 (Narrow\&Long), 1.2 (Wide\&Short), 1.3 (Wide\&Long) and 1.2 (ALL). 
+ We repeat the experiment 100 times and error bar indicates maximum, minimum and average value. 
+ To eliminate the  influence of extreme value, we we remove the top and last result 2.5\% of each methods and recompute the factor of improvement, then we get
+the 95th factor of improvement.
+ For the 95th case, we can find that Yosemite has the improvement factors on average weight coflow completion time  of 30 (Narrow\&Short),20 (Narrow\&Long), 2.5 (Wide\&Short), 1.5  (Wide\&Long), and 2.5 (ALL), however Varys has 22 (Narrow\&Short),14 (Narrow\&Long), 2.1 (Wide\&Short), 1.2  (Wide\&Long) and 2.1 (ALL) and other 
+ method such as Aalo and Barrat performs even worse than Varys.  
+ Fig. \ref{evalution_real_weight_fig}(a) also indicates that FIFO\_LM based solution such as Barrat only accelerates the transmission of long tasks (including Narrow\&Long and Wide\&Long), however, for the short ones, it has poor performance. 
+ This is because that FIFO\_LM based solution can lead to head-of-line blocking problem especially for the heterogenous coflows which has various flow length, width and arrival time.
  
- Fig. \ref{evalution_real_weight_fig}(b) is the CDF of weight completion time of different schemas. We can see comparing with perflow-fairness schema, through Yosemite and other schemas can reduce weight completion time on average, they prolong the tail value. That is to say, for applications which involves lot long flows, weight completion time may have long duration using Yosemite. This is trivial for private cloud.
+ Fig. \ref{evalution_real_weight_fig}(b) is the distribution of wcct. 
+ Compare with TCP-fair sharing method, through Yosemite can reduce average wcct, it prolongs the tail value. 
+ That is to say, for applications which involves lot long flows, weight completion time will have long duration using Yosemite and this is trivial for private cloud.
  
- Comparing with Varys, Aalo and other schemas, Yosemite can reduce weight completion significantly. One may be interested in the coflow completion time under different schema. Fig. \ref{evalution_real_fig} shows the detail of the coflow completion time of Yosemite, Barrat, Varys,  Aalo, perflow fairness of the same settings, perflow fairness is selected as the baseline. Fig. 5(a) shows that the improvement factors of Yosemite on average coflow completion time are 2 (Narrow\&Short),1.1 (Narrow\&Long), 0.8  (Wide\&Short), 0.9   (Wide\&Long), and 1.3 (ALL) on average while Varys performs about $\sim5\%$ better than Yosemite. Fig. \ref{evalution_real_fig}(a) also shows the maximum value and minimum value of Yosemite under different weight settings. For Barrat, Aalo and Varys, their coflow completion time are same no matter what weight are set. Fig. \ref{evalution_real_fig}(b) shows the result of distribution of coflow completion time. The result is similar to Fig. \ref{evalution_real_weight_fig}(b).
+  Fig. \ref{evalution_real_weight_fig} indicates, Yosemite can decrease wcct significantly. 
+ One may be interested in the coflow completion time (cct) performance of Yosemite. 
+ Fig. \ref{evalution_real_fig} shows cct performance of Yosemite, Barrat, Varys,  Aalo, TCP-fair sharing with the same settings, TCP-fair sharing is selected as the baseline. 
+Fig. \ref{evalution_real_fig}(a) shows that the improvement factors of Yosemite on cct  are 2 (Narrow\&Short),1.1 (Narrow\&Long), 0.8  (Wide\&Short), 0.9   (Wide\&Long) and 1.3 (ALL) , while Varys performs about $\sim5\%$ better than Yosemite. 
+ Fig. \ref{evalution_real_fig}(a) also shows the maximum value and minimum value of Yosemite under different weight settings. 
+ For Barrat, Aalo and Varys, as their cct have no relationships with weight, so that average cct  will not change under different weight settings.  
+ Fig. \ref{evalution_real_fig}(b) shows the result of distribution of coflow completion time which is similar to Fig. \ref{evalution_real_weight_fig}(b).
  
  
  \subsection{Performance under different settings} 

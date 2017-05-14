@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.9.28)  14 MAY 2017 08:32
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.9.28)  14 MAY 2017 16:48
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -514,11 +514,11 @@ Overfull \hbox (2.23834pt too wide) in paragraph at lines 833--834
  []
 
 Package epstopdf Info: Source file: <./figs/fake/fake2.eps>
-(epstopdf)                    date: 2017-05-12 21:16:49
-(epstopdf)                    size: 35584 bytes
+(epstopdf)                    date: 2017-05-14 15:56:48
+(epstopdf)                    size: 35188 bytes
 (epstopdf)             Output file: <./figs/fake/fake2-eps-converted-to.pdf>
-(epstopdf)                    date: 2017-05-12 21:16:59
-(epstopdf)                    size: 20730 bytes
+(epstopdf)                    date: 2017-05-14 15:56:58
+(epstopdf)                    size: 20901 bytes
 (epstopdf)             Command: <repstopdf --outfile=./figs/fake/fake2-eps-conv
 erted-to.pdf ./figs/fake/fake2.eps>
 (epstopdf)             \includegraphics on input line 850.
@@ -532,17 +532,17 @@ ine 850.
 (pdftex.def)             Requested size: 252.0pt x 125.998pt.
  [6 <./figs/fake/fake2-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <./figs/fake/fake4.eps>
-(epstopdf)                    date: 2017-05-12 21:16:49
-(epstopdf)                    size: 35273 bytes
+(epstopdf)                    date: 2017-05-14 15:56:48
+(epstopdf)                    size: 34601 bytes
 (epstopdf)             Output file: <./figs/fake/fake4-eps-converted-to.pdf>
-(epstopdf)                    date: 2017-05-12 21:17:00
-(epstopdf)                    size: 22186 bytes
+(epstopdf)                    date: 2017-05-14 15:56:58
+(epstopdf)                    size: 22470 bytes
 (epstopdf)             Command: <repstopdf --outfile=./figs/fake/fake4-eps-conv
 erted-to.pdf ./figs/fake/fake4.eps>
 (epstopdf)             \includegraphics on input line 897.
 Package epstopdf Info: Output file is already uptodate.
 
-<./figs/fake/fake4-eps-converted-to.pdf, id=136, 867.24pt x 433.62pt>
+<./figs/fake/fake4-eps-converted-to.pdf, id=137, 867.24pt x 433.62pt>
 File: ./figs/fake/fake4-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ./figs/fake/fake4-eps-converted-to.pdf>
@@ -550,260 +550,270 @@ Package pdftex.def Info: ./figs/fake/fake4-eps-converted-to.pdf used on input l
 ine 897.
 (pdftex.def)             Requested size: 252.0pt x 125.998pt.
 Package epstopdf Info: Source file: <./figs/fake/fake5.eps>
-(epstopdf)                    date: 2017-05-12 21:16:50
-(epstopdf)                    size: 21185 bytes
+(epstopdf)                    date: 2017-05-14 15:56:49
+(epstopdf)                    size: 21167 bytes
 (epstopdf)             Output file: <./figs/fake/fake5-eps-converted-to.pdf>
-(epstopdf)                    date: 2017-05-12 21:17:00
-(epstopdf)                    size: 15217 bytes
+(epstopdf)                    date: 2017-05-14 15:56:58
+(epstopdf)                    size: 15170 bytes
 (epstopdf)             Command: <repstopdf --outfile=./figs/fake/fake5-eps-conv
 erted-to.pdf ./figs/fake/fake5.eps>
 (epstopdf)             \includegraphics on input line 904.
 Package epstopdf Info: Output file is already uptodate.
 
-<./figs/fake/fake5-eps-converted-to.pdf, id=137, 578.16pt x 433.62pt>
+<./figs/fake/fake5-eps-converted-to.pdf, id=138, 578.16pt x 578.16pt>
 File: ./figs/fake/fake5-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ./figs/fake/fake5-eps-converted-to.pdf>
 Package pdftex.def Info: ./figs/fake/fake5-eps-converted-to.pdf used on input l
 ine 904.
-(pdftex.def)             Requested size: 115.63243pt x 86.72246pt.
+(pdftex.def)             Requested size: 115.63243pt x 115.62994pt.
 Package epstopdf Info: Source file: <./figs/fake/fake6.eps>
-(epstopdf)                    date: 2017-05-12 21:16:50
-(epstopdf)                    size: 20926 bytes
+(epstopdf)                    date: 2017-05-14 15:56:49
+(epstopdf)                    size: 20911 bytes
 (epstopdf)             Output file: <./figs/fake/fake6-eps-converted-to.pdf>
-(epstopdf)                    date: 2017-05-12 21:17:00
-(epstopdf)                    size: 15233 bytes
+(epstopdf)                    date: 2017-05-14 15:56:59
+(epstopdf)                    size: 15196 bytes
 (epstopdf)             Command: <repstopdf --outfile=./figs/fake/fake6-eps-conv
 erted-to.pdf ./figs/fake/fake6.eps>
 (epstopdf)             \includegraphics on input line 906.
 Package epstopdf Info: Output file is already uptodate.
 
-<./figs/fake/fake6-eps-converted-to.pdf, id=138, 578.16pt x 433.62pt>
+<./figs/fake/fake6-eps-converted-to.pdf, id=139, 578.16pt x 578.16pt>
 File: ./figs/fake/fake6-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ./figs/fake/fake6-eps-converted-to.pdf>
 Package pdftex.def Info: ./figs/fake/fake6-eps-converted-to.pdf used on input l
 ine 906.
-(pdftex.def)             Requested size: 115.63243pt x 86.72246pt.
+(pdftex.def)             Requested size: 115.63243pt x 115.62994pt.
 Package epstopdf Info: Source file: <./figs/fake/fake3.eps>
-(epstopdf)                    date: 2017-05-12 21:16:50
-(epstopdf)                    size: 26953 bytes
+(epstopdf)                    date: 2017-05-14 15:56:49
+(epstopdf)                    size: 26954 bytes
 (epstopdf)             Output file: <./figs/fake/fake3-eps-converted-to.pdf>
-(epstopdf)                    date: 2017-05-12 21:17:01
-(epstopdf)                    size: 18432 bytes
+(epstopdf)                    date: 2017-05-14 15:56:59
+(epstopdf)                    size: 18421 bytes
 (epstopdf)             Command: <repstopdf --outfile=./figs/fake/fake3-eps-conv
 erted-to.pdf ./figs/fake/fake3.eps>
-(epstopdf)             \includegraphics on input line 954.
+(epstopdf)             \includegraphics on input line 914.
 Package epstopdf Info: Output file is already uptodate.
 
-<./figs/fake/fake3-eps-converted-to.pdf, id=139, 578.16pt x 433.62pt>
+<./figs/fake/fake3-eps-converted-to.pdf, id=140, 578.16pt x 433.62pt>
 File: ./figs/fake/fake3-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ./figs/fake/fake3-eps-converted-to.pdf>
 Package pdftex.def Info: ./figs/fake/fake3-eps-converted-to.pdf used on input l
-ine 954.
+ine 914.
 (pdftex.def)             Requested size: 201.60077pt x 151.20026pt.
- [7 <./figs/fake/fake4-eps-converted-to.pdf> <./figs/fake/fake5-eps-converted-t
-o.pdf> <./figs/fake/fake6-eps-converted-to.pdf> <./figs/fake/fake3-eps-converte
-d-to.pdf>]
 Package epstopdf Info: Source file: <./figs/real/weight_real_type.eps>
-(epstopdf)                    date: 2017-05-05 00:44:31
-(epstopdf)                    size: 51141 bytes
+(epstopdf)                    date: 2017-05-14 12:35:38
+(epstopdf)                    size: 46695 bytes
 (epstopdf)             Output file: <./figs/real/weight_real_type-eps-converted
 -to.pdf>
-(epstopdf)                    date: 2017-05-05 00:46:08
-(epstopdf)                    size: 26215 bytes
+(epstopdf)                    date: 2017-05-14 12:35:55
+(epstopdf)                    size: 22412 bytes
 (epstopdf)             Command: <repstopdf --outfile=./figs/real/weight_real_ty
 pe-eps-converted-to.pdf ./figs/real/weight_real_type.eps>
-(epstopdf)             \includegraphics on input line 972.
+(epstopdf)             \includegraphics on input line 922.
 Package epstopdf Info: Output file is already uptodate.
 
-<./figs/real/weight_real_type-eps-converted-to.pdf, id=292, 867.24pt x 433.62pt
+<./figs/real/weight_real_type-eps-converted-to.pdf, id=141, 867.24pt x 433.62pt
 >
 File: ./figs/real/weight_real_type-eps-converted-to.pdf Graphic file (type pdf)
 
  <use ./figs/real/weight_real_type-eps-converted-to.pdf>
 Package pdftex.def Info: ./figs/real/weight_real_type-eps-converted-to.pdf used
- on input line 972.
-(pdftex.def)             Requested size: 361.34999pt x 180.67676pt.
+ on input line 922.
+(pdftex.def)             Requested size: 354.12256pt x 177.06415pt.
 Package epstopdf Info: Source file: <./figs/real/weight_CDF_compare.eps>
-(epstopdf)                    date: 2017-05-05 00:45:22
-(epstopdf)                    size: 25052 bytes
+(epstopdf)                    date: 2017-05-14 12:35:47
+(epstopdf)                    size: 23251 bytes
 (epstopdf)             Output file: <./figs/real/weight_CDF_compare-eps-convert
 ed-to.pdf>
-(epstopdf)                    date: 2017-05-05 00:46:09
-(epstopdf)                    size: 17546 bytes
+(epstopdf)                    date: 2017-05-14 12:35:55
+(epstopdf)                    size: 16465 bytes
 (epstopdf)             Command: <repstopdf --outfile=./figs/real/weight_CDF_com
 pare-eps-converted-to.pdf ./figs/real/weight_CDF_compare.eps>
-(epstopdf)             \includegraphics on input line 974.
+(epstopdf)             \includegraphics on input line 924.
 Package epstopdf Info: Output file is already uptodate.
 
-<./figs/real/weight_CDF_compare-eps-converted-to.pdf, id=293, 325.215pt x 433.6
-2pt>
+<./figs/real/weight_CDF_compare-eps-converted-to.pdf, id=142, 433.62pt x 505.89
+pt>
 File: ./figs/real/weight_CDF_compare-eps-converted-to.pdf Graphic file (type pd
 f)
  <use ./figs/real/weight_CDF_compare-eps-converted-to.pdf>
 Package pdftex.def Info: ./figs/real/weight_CDF_compare-eps-converted-to.pdf us
-ed on input line 974.
-(pdftex.def)             Requested size: 137.31255pt x 183.08516pt.
+ed on input line 924.
+(pdftex.def)             Requested size: 148.15372pt x 172.84943pt.
 Package epstopdf Info: Source file: <./figs/completion/real_type.eps>
-(epstopdf)                    date: 2017-05-05 15:41:13
-(epstopdf)                    size: 44990 bytes
+(epstopdf)                    date: 2017-05-14 12:14:37
+(epstopdf)                    size: 40587 bytes
 (epstopdf)             Output file: <./figs/completion/real_type-eps-converted-
 to.pdf>
-(epstopdf)                    date: 2017-05-05 15:42:25
-(epstopdf)                    size: 25127 bytes
+(epstopdf)                    date: 2017-05-14 12:15:25
+(epstopdf)                    size: 21324 bytes
 (epstopdf)             Command: <repstopdf --outfile=./figs/completion/real_typ
 e-eps-converted-to.pdf ./figs/completion/real_type.eps>
-(epstopdf)             \includegraphics on input line 985.
+(epstopdf)             \includegraphics on input line 935.
 Package epstopdf Info: Output file is already uptodate.
 
-<./figs/completion/real_type-eps-converted-to.pdf, id=294, 867.24pt x 433.62pt>
+<./figs/completion/real_type-eps-converted-to.pdf, id=143, 867.24pt x 433.62pt>
 File: ./figs/completion/real_type-eps-converted-to.pdf Graphic file (type pdf)
 <use ./figs/completion/real_type-eps-converted-to.pdf>
 Package pdftex.def Info: ./figs/completion/real_type-eps-converted-to.pdf used 
-on input line 985.
-(pdftex.def)             Requested size: 361.34999pt x 180.67676pt.
+on input line 935.
+(pdftex.def)             Requested size: 354.12256pt x 177.06415pt.
 Package epstopdf Info: Source file: <./figs/completion/CDF_compare.eps>
-(epstopdf)                    date: 2017-05-05 15:41:25
-(epstopdf)                    size: 26670 bytes
+(epstopdf)                    date: 2017-05-14 12:14:42
+(epstopdf)                    size: 25472 bytes
 (epstopdf)             Output file: <./figs/completion/CDF_compare-eps-converte
 d-to.pdf>
-(epstopdf)                    date: 2017-05-05 15:42:26
-(epstopdf)                    size: 17932 bytes
+(epstopdf)                    date: 2017-05-14 12:15:26
+(epstopdf)                    size: 17387 bytes
 (epstopdf)             Command: <repstopdf --outfile=./figs/completion/CDF_comp
 are-eps-converted-to.pdf ./figs/completion/CDF_compare.eps>
-(epstopdf)             \includegraphics on input line 986.
+(epstopdf)             \includegraphics on input line 936.
 Package epstopdf Info: Output file is already uptodate.
 
-<./figs/completion/CDF_compare-eps-converted-to.pdf, id=295, 325.215pt x 433.62
-pt>
+<./figs/completion/CDF_compare-eps-converted-to.pdf, id=144, 433.62pt x 505.89p
+t>
 File: ./figs/completion/CDF_compare-eps-converted-to.pdf Graphic file (type pdf
 )
  <use ./figs/completion/CDF_compare-eps-converted-to.pdf>
 Package pdftex.def Info: ./figs/completion/CDF_compare-eps-converted-to.pdf use
-d on input line 986.
-(pdftex.def)             Requested size: 137.31255pt x 183.08516pt.
+d on input line 936.
+(pdftex.def)             Requested size: 151.76744pt x 177.06415pt.
 Package epstopdf Info: Source file: <./figs/different/fraclength.eps>
-(epstopdf)                    date: 2017-05-05 01:16:30
-(epstopdf)                    size: 43646 bytes
+(epstopdf)                    date: 2017-05-14 16:37:55
+(epstopdf)                    size: 33834 bytes
 (epstopdf)             Output file: <./figs/different/fraclength-eps-converted-
 to.pdf>
-(epstopdf)                    date: 2017-05-05 01:20:08
-(epstopdf)                    size: 20156 bytes
+(epstopdf)                    date: 2017-05-14 16:38:18
+(epstopdf)                    size: 18140 bytes
 (epstopdf)             Command: <repstopdf --outfile=./figs/different/fraclengt
 h-eps-converted-to.pdf ./figs/different/fraclength.eps>
-(epstopdf)             \includegraphics on input line 993.
+(epstopdf)             \includegraphics on input line 943.
 Package epstopdf Info: Output file is already uptodate.
 
-<./figs/different/fraclength-eps-converted-to.pdf, id=296, 578.16pt x 433.62pt>
+<./figs/different/fraclength-eps-converted-to.pdf, id=145, 542.025pt x 542.025p
+t>
 File: ./figs/different/fraclength-eps-converted-to.pdf Graphic file (type pdf)
-<use ./figs/different/fraclength-eps-converted-to.pdf>
+ <use ./figs/different/fraclength-eps-converted-to.pdf>
 Package pdftex.def Info: ./figs/different/fraclength-eps-converted-to.pdf used 
-on input line 993.
-(pdftex.def)             Requested size: 119.24506pt x 89.4286pt.
+on input line 943.
+(pdftex.def)             Requested size: 119.24506pt x 119.2376pt.
 Package epstopdf Info: Source file: <./figs/different/fracwidth.eps>
-(epstopdf)                    date: 2017-05-05 01:19:01
-(epstopdf)                    size: 32651 bytes
+(epstopdf)                    date: 2017-05-14 16:41:45
+(epstopdf)                    size: 31526 bytes
 (epstopdf)             Output file: <./figs/different/fracwidth-eps-converted-t
 o.pdf>
-(epstopdf)                    date: 2017-05-05 01:20:09
-(epstopdf)                    size: 18196 bytes
+(epstopdf)                    date: 2017-05-14 16:42:02
+(epstopdf)                    size: 17672 bytes
 (epstopdf)             Command: <repstopdf --outfile=./figs/different/fracwidth
 -eps-converted-to.pdf ./figs/different/fracwidth.eps>
-(epstopdf)             \includegraphics on input line 995.
+(epstopdf)             \includegraphics on input line 945.
 Package epstopdf Info: Output file is already uptodate.
 
-<./figs/different/fracwidth-eps-converted-to.pdf, id=297, 578.16pt x 433.62pt>
+<./figs/different/fracwidth-eps-converted-to.pdf, id=146, 542.025pt x 542.025pt
+>
 File: ./figs/different/fracwidth-eps-converted-to.pdf Graphic file (type pdf)
-
-<use ./figs/different/fracwidth-eps-converted-to.pdf>
+ <use ./figs/different/fracwidth-eps-converted-to.pdf>
 Package pdftex.def Info: ./figs/different/fracwidth-eps-converted-to.pdf used o
-n input line 995.
-(pdftex.def)             Requested size: 119.24506pt x 89.4286pt.
+n input line 945.
+(pdftex.def)             Requested size: 119.24506pt x 119.2376pt.
 Package epstopdf Info: Source file: <./figs/different/weight.eps>
-(epstopdf)                    date: 2017-05-05 01:19:38
-(epstopdf)                    size: 33440 bytes
+(epstopdf)                    date: 2017-05-14 16:44:59
+(epstopdf)                    size: 32987 bytes
 (epstopdf)             Output file: <./figs/different/weight-eps-converted-to.p
 df>
-(epstopdf)                    date: 2017-05-05 01:20:09
-(epstopdf)                    size: 19059 bytes
+(epstopdf)                    date: 2017-05-14 16:45:15
+(epstopdf)                    size: 18945 bytes
 (epstopdf)             Command: <repstopdf --outfile=./figs/different/weight-ep
 s-converted-to.pdf ./figs/different/weight.eps>
-(epstopdf)             \includegraphics on input line 997.
+(epstopdf)             \includegraphics on input line 947.
 Package epstopdf Info: Output file is already uptodate.
 
-<./figs/different/weight-eps-converted-to.pdf, id=298, 578.16pt x 433.62pt>
+<./figs/different/weight-eps-converted-to.pdf, id=147, 542.025pt x 542.025pt>
 File: ./figs/different/weight-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ./figs/different/weight-eps-converted-to.pdf>
 Package pdftex.def Info: ./figs/different/weight-eps-converted-to.pdf used on i
-nput line 997.
-(pdftex.def)             Requested size: 119.24506pt x 89.4286pt.
+nput line 947.
+(pdftex.def)             Requested size: 119.24506pt x 119.2376pt.
 Package epstopdf Info: Source file: <./figs/different/concurrent.eps>
-(epstopdf)                    date: 2017-05-05 01:10:03
-(epstopdf)                    size: 42769 bytes
+(epstopdf)                    date: 2017-05-14 16:48:43
+(epstopdf)                    size: 40501 bytes
 (epstopdf)             Output file: <./figs/different/concurrent-eps-converted-
 to.pdf>
 (epstopdf)                    date: 2017-05-05 01:20:10
 (epstopdf)                    size: 20996 bytes
 (epstopdf)             Command: <repstopdf --outfile=./figs/different/concurren
 t-eps-converted-to.pdf ./figs/different/concurrent.eps>
-(epstopdf)             \includegraphics on input line 999.
-Package epstopdf Info: Output file is already uptodate.
+(epstopdf)             \includegraphics on input line 949.
+runsystem(repstopdf --outfile=./figs/different/concurrent-eps-converted-to.pdf 
+./figs/different/concurrent.eps)...executed safely (allowed).
 
-<./figs/different/concurrent-eps-converted-to.pdf, id=299, 578.16pt x 433.62pt>
+Package epstopdf Info: Result file: <./figs/different/concurrent-eps-converted-
+to.pdf>
+(epstopdf)                    date: 2017-05-14 16:48:58
+(epstopdf)                    size: 20333 bytes.
+
+<./figs/different/concurrent-eps-converted-to.pdf, id=148, 542.025pt x 542.025p
+t>
 File: ./figs/different/concurrent-eps-converted-to.pdf Graphic file (type pdf)
-<use ./figs/different/concurrent-eps-converted-to.pdf>
+ <use ./figs/different/concurrent-eps-converted-to.pdf>
 Package pdftex.def Info: ./figs/different/concurrent-eps-converted-to.pdf used 
-on input line 999.
-(pdftex.def)             Requested size: 119.24506pt x 89.4286pt.
+on input line 949.
+(pdftex.def)             Requested size: 119.24506pt x 119.2376pt.
 Package epstopdf Info: Source file: <./figs/fake/fake1.eps>
-(epstopdf)                    date: 2017-05-12 21:16:49
-(epstopdf)                    size: 40265 bytes
+(epstopdf)                    date: 2017-05-14 15:56:47
+(epstopdf)                    size: 35535 bytes
 (epstopdf)             Output file: <./figs/fake/fake1-eps-converted-to.pdf>
-(epstopdf)                    date: 2017-05-12 21:17:01
-(epstopdf)                    size: 25206 bytes
+(epstopdf)                    date: 2017-05-14 15:57:00
+(epstopdf)                    size: 21218 bytes
 (epstopdf)             Command: <repstopdf --outfile=./figs/fake/fake1-eps-conv
 erted-to.pdf ./figs/fake/fake1.eps>
-(epstopdf)             \includegraphics on input line 1006.
+(epstopdf)             \includegraphics on input line 956.
 Package epstopdf Info: Output file is already uptodate.
 
-<./figs/fake/fake1-eps-converted-to.pdf, id=300, 867.24pt x 433.62pt>
+<./figs/fake/fake1-eps-converted-to.pdf, id=149, 867.24pt x 433.62pt>
 File: ./figs/fake/fake1-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ./figs/fake/fake1-eps-converted-to.pdf>
 Package pdftex.def Info: ./figs/fake/fake1-eps-converted-to.pdf used on input l
-ine 1006.
+ine 956.
 (pdftex.def)             Requested size: 252.0pt x 125.998pt.
 
-
-Package tabulary Warning: No suitable columns! on input line 1033.
-
-[8]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
+ [7 <./figs/fake/fake4-eps-converted-to.pdf> <./figs/fake/fake5-eps-converted-t
+o.pdf> <./figs/fake/fake6-eps-converted-to.pdf> <./figs/fake/fake3-eps-converte
+d-to.pdf>]
+Underfull \vbox (badness 4726) has occurred while \output is active []
 
-Underfull \vbox (badness 1735) has occurred while \output is active []
 
- [9 <./figs/real/weight_real_type-eps-converted-to.pdf> <./figs/real/weight_CDF
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [8 <./figs/real/weight_real_type-eps-converted-to.pdf> <./figs/real/weight_CDF
 _compare-eps-converted-to.pdf> <./figs/completion/real_type-eps-converted-to.pd
 f> <./figs/completion/CDF_compare-eps-converted-to.pdf> <./figs/different/fracl
 ength-eps-converted-to.pdf> <./figs/different/fracwidth-eps-converted-to.pdf> <
 ./figs/different/weight-eps-converted-to.pdf> <./figs/different/concurrent-eps-
-converted-to.pdf>] (./ton_caching.bbl
+converted-to.pdf>]
+
+Package tabulary Warning: No suitable columns! on input line 1052.
+
+[9 <./figs/fake/fake1-eps-converted-to.pdf>] (./ton_caching.bbl
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no ‹ in font ptmr7t!
 Missing character: There is no † in font ptmr7t!
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no ” in font ptmr7t!
-) [10 <./figs/fake/fake1-eps-converted-to.pdf>]
+) [10]
 (./ton_caching.aux) ) 
 Here is how much of TeX's memory you used:
  5456 strings out of 493014
  84850 string characters out of 6133351
- 158177 words of memory out of 5000000
+ 158176 words of memory out of 5000000
  8877 multiletter control sequences out of 15000+600000
  42542 words of font info for 90 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -825,10 +835,10 @@ live/2016/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local
 016/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2016/texmf
 -dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2016/texmf-dist/font
 s/type1/urw/times/utmri8a.pfb>
-Output written on ton_caching.pdf (10 pages, 480734 bytes).
+Output written on ton_caching.pdf (10 pages, 466046 bytes).
 PDF statistics:
- 753 PDF objects out of 1000 (max. 8388607)
- 162 compressed objects within 2 object streams
+ 724 PDF objects out of 1000 (max. 8388607)
+ 158 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  81 words of extra memory for PDF output out of 10000 (max. 10000000)
 
