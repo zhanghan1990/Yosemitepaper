@@ -4,6 +4,10 @@
 Akka.
 \newblock \url{http://akka.io/}.
 
+\bibitem{alluxio}
+alluxio.
+\newblock \url{http://www.alluxio.org/}.
+
 \bibitem{hadoop}
 Hadoop.
 \newblock \url{http://hadoop.apache.org/}.
@@ -12,9 +16,13 @@ Hadoop.
 kryo.
 \newblock \url{https://code.google.com/p/kryo/}.
 
-\bibitem{varys}
-Varys.
-\newblock \url{https://github.com/coflow/varys/}.
+\bibitem{openstack}
+openstack.
+\newblock \url{https://www.openstack.org/}.
+
+\bibitem{TC}
+Traffic control.
+\newblock \url{http://tldp.org/HOWTO/Traffic-Control-HOWTO/intro.html/}.
 
 \bibitem{Yosemite}
 Yosemite.
