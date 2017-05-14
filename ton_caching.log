@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.9.28)  14 MAY 2017 08:21
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.9.28)  14 MAY 2017 08:24
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -466,12 +466,12 @@ e
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    Try loading font information for U+msa on input line 188.
+LaTeX Font Info:    Try loading font information for U+msa on input line 241.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 188.
+LaTeX Font Info:    Try loading font information for U+msb on input line 241.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -485,7 +485,7 @@ Package tabulary Warning: No suitable columns! on input line 678.
 
 Package tabulary Warning: No suitable columns! on input line 693.
 
-<./figs/performance/online_offline.pdf, id=25, 578.16pt x 433.62pt>
+<./figs/performance/online_offline.pdf, id=24, 578.16pt x 433.62pt>
 File: ./figs/performance/online_offline.pdf Graphic file (type pdf)
 
 <use ./figs/performance/online_offline.pdf>
@@ -493,7 +493,7 @@ Package pdftex.def Info: ./figs/performance/online_offline.pdf used on input li
 ne 703.
 (pdftex.def)             Requested size: 201.60077pt x 151.20026pt.
  [4]
-<./figs/background/system.pdf, id=33, 1027.84pt x 770.88pt>
+<./figs/background/system.pdf, id=32, 1027.84pt x 770.88pt>
 File: ./figs/background/system.pdf Graphic file (type pdf)
 
 <use ./figs/background/system.pdf>
@@ -523,7 +523,7 @@ Package epstopdf Info: Source file: <./figs/fake/fake2.eps>
 erted-to.pdf ./figs/fake/fake2.eps>
 (epstopdf)             \includegraphics on input line 850.
 Package epstopdf Info: Output file is already uptodate.
-<./figs/fake/fake2-eps-converted-to.pdf, id=87, 867.24pt x 433.62pt>
+<./figs/fake/fake2-eps-converted-to.pdf, id=86, 867.24pt x 433.62pt>
 File: ./figs/fake/fake2-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ./figs/fake/fake2-eps-converted-to.pdf>
@@ -542,7 +542,7 @@ erted-to.pdf ./figs/fake/fake4.eps>
 (epstopdf)             \includegraphics on input line 897.
 Package epstopdf Info: Output file is already uptodate.
 
-<./figs/fake/fake4-eps-converted-to.pdf, id=137, 867.24pt x 433.62pt>
+<./figs/fake/fake4-eps-converted-to.pdf, id=136, 867.24pt x 433.62pt>
 File: ./figs/fake/fake4-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ./figs/fake/fake4-eps-converted-to.pdf>
@@ -560,7 +560,7 @@ erted-to.pdf ./figs/fake/fake5.eps>
 (epstopdf)             \includegraphics on input line 904.
 Package epstopdf Info: Output file is already uptodate.
 
-<./figs/fake/fake5-eps-converted-to.pdf, id=138, 578.16pt x 433.62pt>
+<./figs/fake/fake5-eps-converted-to.pdf, id=137, 578.16pt x 433.62pt>
 File: ./figs/fake/fake5-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ./figs/fake/fake5-eps-converted-to.pdf>
@@ -578,7 +578,7 @@ erted-to.pdf ./figs/fake/fake6.eps>
 (epstopdf)             \includegraphics on input line 906.
 Package epstopdf Info: Output file is already uptodate.
 
-<./figs/fake/fake6-eps-converted-to.pdf, id=139, 578.16pt x 433.62pt>
+<./figs/fake/fake6-eps-converted-to.pdf, id=138, 578.16pt x 433.62pt>
 File: ./figs/fake/fake6-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ./figs/fake/fake6-eps-converted-to.pdf>
@@ -596,7 +596,7 @@ erted-to.pdf ./figs/fake/fake3.eps>
 (epstopdf)             \includegraphics on input line 954.
 Package epstopdf Info: Output file is already uptodate.
 
-<./figs/fake/fake3-eps-converted-to.pdf, id=140, 578.16pt x 433.62pt>
+<./figs/fake/fake3-eps-converted-to.pdf, id=139, 578.16pt x 433.62pt>
 File: ./figs/fake/fake3-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ./figs/fake/fake3-eps-converted-to.pdf>
@@ -618,7 +618,7 @@ pe-eps-converted-to.pdf ./figs/real/weight_real_type.eps>
 (epstopdf)             \includegraphics on input line 972.
 Package epstopdf Info: Output file is already uptodate.
 
-<./figs/real/weight_real_type-eps-converted-to.pdf, id=293, 867.24pt x 433.62pt
+<./figs/real/weight_real_type-eps-converted-to.pdf, id=292, 867.24pt x 433.62pt
 >
 File: ./figs/real/weight_real_type-eps-converted-to.pdf Graphic file (type pdf)
 
@@ -638,7 +638,7 @@ pare-eps-converted-to.pdf ./figs/real/weight_CDF_compare.eps>
 (epstopdf)             \includegraphics on input line 974.
 Package epstopdf Info: Output file is already uptodate.
 
-<./figs/real/weight_CDF_compare-eps-converted-to.pdf, id=294, 325.215pt x 433.6
+<./figs/real/weight_CDF_compare-eps-converted-to.pdf, id=293, 325.215pt x 433.6
 2pt>
 File: ./figs/real/weight_CDF_compare-eps-converted-to.pdf Graphic file (type pd
 f)
@@ -658,7 +658,7 @@ e-eps-converted-to.pdf ./figs/completion/real_type.eps>
 (epstopdf)             \includegraphics on input line 985.
 Package epstopdf Info: Output file is already uptodate.
 
-<./figs/completion/real_type-eps-converted-to.pdf, id=295, 867.24pt x 433.62pt>
+<./figs/completion/real_type-eps-converted-to.pdf, id=294, 867.24pt x 433.62pt>
 File: ./figs/completion/real_type-eps-converted-to.pdf Graphic file (type pdf)
 <use ./figs/completion/real_type-eps-converted-to.pdf>
 Package pdftex.def Info: ./figs/completion/real_type-eps-converted-to.pdf used 
@@ -676,7 +676,7 @@ are-eps-converted-to.pdf ./figs/completion/CDF_compare.eps>
 (epstopdf)             \includegraphics on input line 986.
 Package epstopdf Info: Output file is already uptodate.
 
-<./figs/completion/CDF_compare-eps-converted-to.pdf, id=296, 325.215pt x 433.62
+<./figs/completion/CDF_compare-eps-converted-to.pdf, id=295, 325.215pt x 433.62
 pt>
 File: ./figs/completion/CDF_compare-eps-converted-to.pdf Graphic file (type pdf
 )
@@ -696,7 +696,7 @@ h-eps-converted-to.pdf ./figs/different/fraclength.eps>
 (epstopdf)             \includegraphics on input line 993.
 Package epstopdf Info: Output file is already uptodate.
 
-<./figs/different/fraclength-eps-converted-to.pdf, id=297, 578.16pt x 433.62pt>
+<./figs/different/fraclength-eps-converted-to.pdf, id=296, 578.16pt x 433.62pt>
 File: ./figs/different/fraclength-eps-converted-to.pdf Graphic file (type pdf)
 <use ./figs/different/fraclength-eps-converted-to.pdf>
 Package pdftex.def Info: ./figs/different/fraclength-eps-converted-to.pdf used 
@@ -714,7 +714,7 @@ o.pdf>
 (epstopdf)             \includegraphics on input line 995.
 Package epstopdf Info: Output file is already uptodate.
 
-<./figs/different/fracwidth-eps-converted-to.pdf, id=298, 578.16pt x 433.62pt>
+<./figs/different/fracwidth-eps-converted-to.pdf, id=297, 578.16pt x 433.62pt>
 File: ./figs/different/fracwidth-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ./figs/different/fracwidth-eps-converted-to.pdf>
@@ -733,7 +733,7 @@ s-converted-to.pdf ./figs/different/weight.eps>
 (epstopdf)             \includegraphics on input line 997.
 Package epstopdf Info: Output file is already uptodate.
 
-<./figs/different/weight-eps-converted-to.pdf, id=299, 578.16pt x 433.62pt>
+<./figs/different/weight-eps-converted-to.pdf, id=298, 578.16pt x 433.62pt>
 File: ./figs/different/weight-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ./figs/different/weight-eps-converted-to.pdf>
@@ -752,7 +752,7 @@ t-eps-converted-to.pdf ./figs/different/concurrent.eps>
 (epstopdf)             \includegraphics on input line 999.
 Package epstopdf Info: Output file is already uptodate.
 
-<./figs/different/concurrent-eps-converted-to.pdf, id=300, 578.16pt x 433.62pt>
+<./figs/different/concurrent-eps-converted-to.pdf, id=299, 578.16pt x 433.62pt>
 File: ./figs/different/concurrent-eps-converted-to.pdf Graphic file (type pdf)
 <use ./figs/different/concurrent-eps-converted-to.pdf>
 Package pdftex.def Info: ./figs/different/concurrent-eps-converted-to.pdf used 
@@ -769,7 +769,7 @@ erted-to.pdf ./figs/fake/fake1.eps>
 (epstopdf)             \includegraphics on input line 1006.
 Package epstopdf Info: Output file is already uptodate.
 
-<./figs/fake/fake1-eps-converted-to.pdf, id=301, 867.24pt x 433.62pt>
+<./figs/fake/fake1-eps-converted-to.pdf, id=300, 867.24pt x 433.62pt>
 File: ./figs/fake/fake1-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ./figs/fake/fake1-eps-converted-to.pdf>
@@ -801,13 +801,13 @@ Missing character: There is no ” in font ptmr7t!
 ) [10 <./figs/fake/fake1-eps-converted-to.pdf>]
 (./ton_caching.aux) ) 
 Here is how much of TeX's memory you used:
- 5467 strings out of 493014
- 84957 string characters out of 6133351
+ 5456 strings out of 493014
+ 84850 string characters out of 6133351
  158177 words of memory out of 5000000
- 8884 multiletter control sequences out of 15000+600000
- 44370 words of font info for 97 fonts, out of 8000000 for 9000
+ 8877 multiletter control sequences out of 15000+600000
+ 42542 words of font info for 90 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 38i,17n,39p,1081b,552s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 38i,17n,39p,1585b,552s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/base/8
 r.enc}</usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10
 .pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.
@@ -820,16 +820,15 @@ ocal/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/loca
 l/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local
 /texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/t
 exlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/tex
-live/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texli
-ve/2016/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/t
-exlive/2016/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/201
-6/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2016/texmf-d
-ist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/
-type1/urw/times/utmri8a.pfb>
-Output written on ton_caching.pdf (10 pages, 486038 bytes).
+live/2016/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local
+/texlive/2016/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2
+016/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2016/texmf
+-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2016/texmf-dist/font
+s/type1/urw/times/utmri8a.pfb>
+Output written on ton_caching.pdf (10 pages, 480936 bytes).
 PDF statistics:
- 757 PDF objects out of 1000 (max. 8388607)
- 165 compressed objects within 2 object streams
+ 753 PDF objects out of 1000 (max. 8388607)
+ 162 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  81 words of extra memory for PDF output out of 10000 (max. 10000000)
 
