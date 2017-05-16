@@ -63,8 +63,13 @@
 \@writefile{toc}{\contentsline {section}{\numberline {IV}Algorithm design and analysis}{3}}
 \newlabel{algorithm}{{IV}{3}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {IV-A}}Weight coflow completion time offline algorithm}{3}}
-\citation{mastrolilli2010minimizing}
 \citation{dean2008mapreduce}
+\citation{alluxio}
+\citation{hadoop}
+\citation{actor}
+\citation{Akka}
+\citation{kryo}
+\citation{Yosemite}
 \@writefile{loa}{\contentsline {algorithm}{\numberline {1}{\ignorespaces 2-approximation offline algorithm\relax }}{4}}
 \providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
 \newlabel{offline}{{1}{4}}
@@ -76,22 +81,17 @@
 \newlabel{tab:loss}{{I}{4}}
 \@writefile{lot}{\contentsline {table}{\numberline {II}{\ignorespaces Comparison between the two algorithms\relax }}{4}}
 \newlabel{tab:comparison}{{II}{4}}
-\citation{alluxio}
-\citation{hadoop}
-\citation{Akka}
-\citation{kryo}
-\citation{Yosemite}
 \citation{Akka}
 \@writefile{toc}{\contentsline {section}{\numberline {V}Yosemite System}{5}}
 \newlabel{Yosemite system}{{V}{5}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {V-A}}Actors and communication}{5}}
 \@writefile{loa}{\contentsline {algorithm}{\numberline {3}{\ignorespaces Procedure of bandwidth allocate\relax }}{5}}
 \newlabel{bandwidth_allocate}{{3}{5}}
-\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Performance comparison between 2-approximate algorithm and online algorithm\relax }}{5}}
-\newlabel{online-offline-fig}{{1}{5}}
-\newlabel{procedure_master}{{\caption@xref {procedure_master}{ on input line 723}}{5}}
+\newlabel{procedure_master}{{\caption@xref {procedure_master}{ on input line 722}}{5}}
 \@writefile{loa}{\contentsline {algorithm}{\numberline {4}{\ignorespaces Procedure of the master\relax }}{5}}
 \newlabel{scheduler}{{4}{5}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces [Simulation] Performance comparison between 2-approximate algorithm and online algorithm\relax }}{5}}
+\newlabel{online-offline-fig}{{1}{5}}
 \newlabel{weight_completion_gamma}{{5}{5}}
 \@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Yosemite architecture. Computation frameworks interact with Yosemite through a client library\relax }}{5}}
 \newlabel{System-design-fig}{{2}{5}}
@@ -112,30 +112,30 @@
 \@writefile{toc}{\contentsline {section}{\numberline {VI}evaluation}{6}}
 \newlabel{evaluation}{{VI}{6}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {VI-A}}methlogy}{6}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces [cloud] File distribute application performance comparison\relax }}{6}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces [Cloud] File distribute application performance\relax }}{6}}
 \newlabel{distribute-fig}{{3}{6}}
 \citation{Yosemite}
 \citation{YosemiteSim}
 \citation{TC}
+\citation{chowdhury2014efficient}
 \newlabel{improvement}{{6}{7}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {VI-B}}Cloud platform evaluation}{7}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces [cloud] With and without work conserving comparison \relax }}{7}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces [Cloud] With and without work conserving\relax }}{7}}
 \newlabel{conserving-fig}{{4}{7}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces [cloud] Overheads of Yosemite\relax }}{7}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces [Cloud] Overheads of Yosemite\relax }}{7}}
 \newlabel{overheads_fig}{{5}{7}}
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Computation time of scheduler}}}{7}}
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Error messages frequency}}}{7}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces [cloud] Performance comparison between Yosemite and Yosemite-sim under the same setting\relax }}{7}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces [Cloud] Performance comparison between Yosemite and Yosemite-sim under the same settings\relax }}{7}}
 \newlabel{sim-real}{{6}{7}}
-\citation{chowdhury2014efficient}
-\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces [Simulation] Detail of wcct for Yosemite, Barrat, Varys, Aalo, TCP fair-sharing under real data center traffic trace,TCP fair-sharing is selected as the baseline.\relax }}{8}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces [Simulation] Detail of WCCT for Yosemite, Barrat, Varys, Aalo, TCP fair-sharing under real data center traffic trace,TCP fair-sharing is selected as the baseline.\relax }}{8}}
 \newlabel{evalution_real_weight_fig}{{7}{8}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Improvement of wcct}}}{8}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Distribution of wcct(s)}}}{8}}
-\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces [Simulation] Detail of cct for Yosemite, Barrat, Varys, Aalo, TCP fair-sharing under real data center traffic trace, TCP fair-sharing is selected as the baseline.\relax }}{8}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Improvement of WCCT}}}{8}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Distribution of WCCT(s)}}}{8}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces [Simulation] Detail of CCT for Yosemite, Barrat, Varys, Aalo, TCP fair-sharing under real data center traffic trace, TCP fair-sharing is selected as the baseline.\relax }}{8}}
 \newlabel{evalution_real_fig}{{8}{8}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Improvement of cct}}}{8}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Distribution of cct(s)}}}{8}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Improvement of CCT}}}{8}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Distribution of CCT(s)}}}{8}}
 \@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces [Simulation] Yosemite performance comparison with Baraat and Varys, Aalo under different settings, TCP fair-sharing is selected as the baseline.\relax }}{8}}
 \newlabel{evalution_cases_different_fig}{{9}{8}}
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Impact of coflow length}}}{8}}
@@ -154,42 +154,43 @@
 \citation{qiu2015minimizing}
 \bibstyle{abbrv}
 \bibdata{paper}
-\bibcite{Akka}{1}
-\bibcite{alluxio}{2}
-\bibcite{hadoop}{3}
-\bibcite{kryo}{4}
-\bibcite{openstack}{5}
-\bibcite{TC}{6}
-\bibcite{Yosemite}{7}
-\bibcite{YosemiteSim}{8}
-\bibcite{DCTCP}{9}
-\bibcite{pFabric}{10}
-\bibcite{chen2000supply}{11}
-\bibcite{chowdhury2012coflow}{12}
-\bibcite{chowdhury2015efficient}{13}
-\bibcite{chowdhury2011managing}{14}
-\bibcite{chowdhury2014efficient}{15}
-\bibcite{dean2008mapreduce}{16}
-\bibcite{dimakis2006decentralized}{17}
-\bibcite{dogar2014decentralized}{18}
-\bibcite{PDQ}{19}
-\bibcite{huang2016sunflow}{20}
-\bibcite{kumar2011lp}{21}
-\bibcite{Latency}{22}
-\bibcite{CloudMirror}{23}
-\bibcite{lin2010secure}{24}
-\bibcite{luo2016towards}{25}
-\bibcite{mastrolilli2010minimizing}{26}
-\bibcite{munir2014friends}{27}
-\bibcite{L2DCT}{28}
-\bibcite{qiu2015minimizing}{29}
-\bibcite{qiu2016experimental}{30}
-\bibcite{roemer2006note}{31}
-\bibcite{tolia2006architecture}{32}
-\bibcite{D2TCP}{33}
-\bibcite{D3}{34}
-\bibcite{zhang2016coda}{35}
-\bibcite{zhang2015more}{36}
+\bibcite{actor}{1}
+\bibcite{Akka}{2}
+\bibcite{alluxio}{3}
+\bibcite{hadoop}{4}
+\bibcite{kryo}{5}
+\bibcite{openstack}{6}
+\bibcite{TC}{7}
+\bibcite{Yosemite}{8}
+\bibcite{YosemiteSim}{9}
+\bibcite{DCTCP}{10}
+\bibcite{pFabric}{11}
+\bibcite{chen2000supply}{12}
+\bibcite{chowdhury2012coflow}{13}
+\bibcite{chowdhury2015efficient}{14}
+\bibcite{chowdhury2011managing}{15}
+\bibcite{chowdhury2014efficient}{16}
+\bibcite{dean2008mapreduce}{17}
+\bibcite{dimakis2006decentralized}{18}
+\bibcite{dogar2014decentralized}{19}
+\bibcite{PDQ}{20}
+\bibcite{huang2016sunflow}{21}
+\bibcite{kumar2011lp}{22}
+\bibcite{Latency}{23}
+\bibcite{CloudMirror}{24}
+\bibcite{lin2010secure}{25}
+\bibcite{luo2016towards}{26}
+\bibcite{mastrolilli2010minimizing}{27}
+\bibcite{munir2014friends}{28}
+\bibcite{L2DCT}{29}
+\bibcite{qiu2015minimizing}{30}
+\bibcite{qiu2016experimental}{31}
+\bibcite{roemer2006note}{32}
+\bibcite{tolia2006architecture}{33}
+\bibcite{D2TCP}{34}
+\bibcite{D3}{35}
+\bibcite{zhang2016coda}{36}
+\bibcite{zhang2015more}{37}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {\unhbox \voidb@x \hbox {VI-D}4}Impact of coflow concurrency}{10}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {VI-E}}Distance to Optimiztion}{10}}
 \@writefile{toc}{\contentsline {section}{\numberline {VII}Conclusion}{10}}

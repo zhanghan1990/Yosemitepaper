@@ -1,5 +1,9 @@
 \begin{thebibliography}{10}
 
+\bibitem{actor}
+Actor model.
+\newblock \url{https://en.wikipedia.org/wiki/Actor_model/}.
+
 \bibitem{Akka}
 Akka.
 \newblock \url{http://akka.io/}.

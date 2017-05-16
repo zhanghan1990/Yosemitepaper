@@ -196,12 +196,12 @@ those with map-reduce style data-intensive computing \cite{dean2008mapreduce}, a
 To meet these requirements, the data center networking infrastructure has been specially tailored, with a tremendous amount of efforts to improve the network topology and routing, as well as the transportation. 
 
 Among these efforts, flow level scheduling methods try to schedule arriving packets according to the characteristics of the corrsponding flows. For example, PDQ\cite{PDQ} and pFabric\cite{pFabric} approximate the {\em shortest job first} (SJF) policy to let shorter flows preempt the bandwidth of longer ones. 
-As a result, the average flow completion time (FCT) tends to be reduced, so does applications' transport lantency. 
+As a result, the average flow completion time (FCT) tends to be reduced, so does applications' transport latency. 
 However, flow level scheduling methods still have several deficiencies\cite{chowdhury2011managing}. 
 On the one hand, flow level scheduling has to be carried out quite frequently, such that centralized scheduler may face huge pressure on its own computation and communication, while decentralized scheduler may face worse scheduling performance.
 On the other hand, some tardy flows may lag behind and affect the overall performance of an application, because the communication of the application cannot finish until all its flows have completed their transmission.
 
-Recently, Coflow has been proposed as a new abstraction to capture the communication patterns in a rich set of data parallel applications, so that their application-level semantics can be effectively modeled. 
+Recently, coflow has been proposed as a new abstraction to capture the communication patterns in a rich set of data parallel applications, so that their application-level semantics can be effectively modeled. 
 According to \cite{chowdhury2012coflow}, a coflow is {\em a collection of flows between two groups of machines with associated semantics and a collective objective.} The collection of flows share a common performance goal, e.g., minimizing the completion time of the latest flow or ensuring that flows meet a common deadline, capturing the application-level requirements in a way better than individual flows can.
 Efficient coflow scheduling methods targeting minimizing coflow completion time (CCT) have been studied. 
 Varys \cite{chowdhury2014efficient} takes a coflow's network bottleneck as the most important factor that determines the coflow completion time. 
@@ -213,7 +213,7 @@ Naturally, they tend to have relatively worse performance than Varys.
 In this paper, we propose {\em weighted coflows} as a further step in this direction, where weights are used to express the importance or priorities of different coflows or applications in meeting a short completion time, and weighted coflow completion time (WCCT) is set as the optimization target. 
 This is natural since there exist both delay sensitive and insensitive applications, and some 
 applications may gain (or lose) more revenue than others in the same amount of time.
-For example, suuporting the internal communication requirement of a search engine with intense internal computation should be more emergent than supporting the file backup on a distributed storage system. When scheduling coflows from these two applications, we would like to take this difference into consideration and assign different weights to them, i.e., coflows of search engine have a higher weight, while coflows of file back have a lower weight.
+For example, supporting the internal communication requirement of a search engine with intense internal computation should be more emergent than supporting the file backup on a distributed storage system. When scheduling coflows from these two applications, we would like to take this difference into consideration and assign different weights to them, i.e., coflows of search engine have a higher weight, while coflows of file back have a lower weight.
 
 We formulate the weighted coflow completion time optimization (WCCO) problem, and present a 2-approximate offline algorithm that borrows ideas from the concurrent open shop problem \cite{mastrolilli2010minimizing}. We then modify the algorithm to an online version, which introduces only minor performance loss compared to the offline one. 
 We further design and implement Yosemite, a coflow scheduling system which is consisted of a central master node, a central monitor node, and other distributed worker nodes, and can be readily deployed in a production cloud environment like openstack. We test the performance of Yosemite by both trace-driven simulations and testbed evaluations, where Yosemite performs quite well in reducing the weighted coflow completion time. Our trace-driven simulations show that, Yosemite's online scheduling algorithm performs about 20\%$\sim$50\% and 30\%$\sim$60\% better than that of Varys and Aalo, respectively. And in our testbed evaluations, Yosemite achieves 30\%  average improvement against Varys.
@@ -233,18 +233,23 @@ We present the details of our Yosemite schduling system in Section \ref{Yosemite
 and evalute it against several coflow schedule methods in Section \ref{evaluation}.
 At last, we conclude in Section \ref{conclusion}.
 
-\section{background and related work}\label{background}
-Data center is now becoming an important infrastructure in data center network. 
-Application needs data center to provide them with high throughput and low latency.  
-However, resources in data center are limited, so efficiently scheduling in data center is necessary.  
-Coflow scheduling methods can date back to flow scheduling. 
 
-DCTCP\cite{DCTCP}, D2TCP\cite{D2TCP},L2DCT \cite{L2DCT} and LPD \cite{zhang2015more} emphasize on flow level rate control. 
-They propose to mark packets on a switch when instantaneous queue length exceeds a certain threshold k. 
+
+
+
+
+\section{background and related work}\label{background}
+Data center is now becoming an important infrastructure for applications. 
+High throughput and low latency are required by applications.
+To meet these requirements, the data center networking infrastructure has been specially tailored, 
+with a tremendous amount of efforts to improve the network topology and routing, as well as the transportation.
+
+DCTCP\cite{DCTCP}, D2TCP\cite{D2TCP}, L2DCT \cite{L2DCT} and LPD \cite{zhang2015more} emphasize on flow level scheduling. 
+They propose to mark packets on a switch when instantaneous queue length exceeds a certain threshold. 
 The endpoints then estimate the extent of congestion by the marked packets, and throttle flow rates in proportion to that extent. 
-With the help of ECN marking mechanism, they reduce the queue length on switches, and can reduce the queueing delay.
+With the help of ECN marking mechanism, they reduce the queue length on switches, thus cutting transfer latency.
 TCP-based methods are simple, 
-however they are implicit rate control method \cite{pFabric} and can never precisely estimate the right flow rates to use so as to schedule flows to minimize FCT 
+however, they are implicit rate control method \cite{pFabric} and can never precisely estimate the right flow rates to use so as to schedule flows to minimize FCT 
 while ensuring that the network is fully utilized. Then explicit methods are proposed.
 
 
@@ -269,15 +274,14 @@ Unfortunately, in many cases, coflow characteristics are unknown a priori and th
 To overcome this, some non-Clairvoyant methods like Aalo\cite{luo2016towards} ,sunflows\cite{ huang2016sunflow},
 D-CLAS\cite{chowdhury2015efficient} and CODA \cite{zhang2016coda} do not need to know coflow information beforehand. 
 They use  information accumulation or machine learning to "guess" the characters of coflow. 
-Non-Clairvoyant methods can be used more widely, however, their performance is not as good as the Clairvoyant ones such as Varys.  
+Non-Clairvoyant methods can be used more widely, however, they tend to have relatively worse performance than Varys
 Although coflow level scheduling methods such as Varys and Aalo perform well on reducing application transfer latency, 
 they ignore different applications always have different level of importance and just scheduling depends on network condition and characters 
 of coflows such as coflow length as well as width is not enough. In reality, the importance of applications should also be taken into consideration.
 
-Some theory paper such as \cite{qiu2015minimizing} sets weight to coflow to minimize average coflow weight completion time. 
-We think this is good direction, however, methods such as  \cite{qiu2015minimizing} should solve complex equations and it is too
-complex to use in practice.
-
+Some theory papers such as \cite{qiu2015minimizing} set weight to coflow to minimize average weight coflow completion time. 
+We think this is good direction as they take this difference into consideration.
+However, methods such as  \cite{qiu2015minimizing} will solve complex equations which make them too complex to use in practise.
 %There are many methods to present the semantics of the application. 
 %Some flow-level algorithms such as D2TCP\cite{D2TCP} and LPD\cite{zhang2015more} use deadline to present the emergency of applications. 
 %Flow missing deadline will be threw way. Deadline can guarantee the application to have low bound of bandwidth and it can describe the semantics of application to some extent. 
@@ -290,8 +294,8 @@ complex to use in practice.
 
 
 \section{system model and problem formulation}\label{system model}
-In this part, we define Weight Coflow Completion Optimization (WCCO) problem and try to prove its equivalent to
-the concurrent open shop problem \cite{roemer2006note}.
+In this part, we define Weight Coflow Completion Optimization (WCCO) problem and prove its equivalent to
+the weight job completion optimization in concurrent open shop\cite{roemer2006note}.
 
 \subsection{Data center non-blocking model}
 
@@ -306,28 +310,27 @@ the concurrent open shop problem \cite{roemer2006note}.
 
 Recent researches\cite{chowdhury2015efficient}\cite{huang2016sunflow}\cite{chowdhury2014efficient}\cite{pFabric}  
 regard  the data center network as  a big giant non-blocking switch which interconnects all the machines.
-In this model all ports have the same normalized unit capacity, and bandwidth compete bandwidth at  ingresses or egresses. 
-Such an abstraction is reasonable and matches with recent full bisection bandwidth topologies widely used in current production data centers-
+In this model all machines' ports have the same normalized unit capacity, and bandwidth compete bandwidth only at ingress and egress ports. 
+Such an abstraction is reasonable and matches with recent full bisection bandwidth topologies widely used in current production data centers -
 To provide uniform high capacity as well as other targets like equidistant endpoints with network core, unlimited workload mobility, etc., 
 today's production data center networks widely adopt non-blocking Clos topologies by design \cite{luo2016towards}.
 
 \subsection{Why we choose weight}
-Applications in data center have to contend with each others for the limited network resources.
-The state-of-art schedule methods regard applications' flow set as a whole to reduce the transfer latency of applications. 
+Applications in data center have to contend with each others for limited network resources.
+The state-of-art schedule methods use coflows as the abstraction to capture the communication patterns in a rich set of data parallel applications,
+so that their application-level semantics can be effectively modeled.
 However, applications in data center have different level of importance, 
 scheduling just depends on network condition as well as the physical property of coflows is not enough.
-We have to differentiate applications to satisfy their demand of bandwidth.
-As a result, how to distinguish the demands of applications is becoming an important problem.
+We have to differentiate applications to satisfy their demands for bandwidth.
 
-Some previous study\cite{D2TCP}\cite{D3}\cite{zhang2015more} use deadline to present the emergency of applications,
+Some previous study\cite{D2TCP}\cite{D3}\cite{zhang2015more} use deadline to express the emergency of applications,
 applications have different deadlines, thus bandwidth.
-Deadline-aware methods aim to let applications finish before a particular time point.
-However, in reality, applications just need to transfer as quickly as possible rather than finishing before the time constraint.
-For the example of hadoop and erasure code storage system running in one data center to compete for network resources
-If we assume hadoop is more important than storage, we can give computation application higher priority to guarantee it to transfer as quickly as possible.
-In this case, setting deadline to applications is not a good choice, as applications do not have the expectation of finishing moment.
-We use weight to present the importance of applications, different applications have different level of importance.
-As a result, instead of minimizing average coflow completion time, we try to minimize average weight completion time.
+However, in reality, applications just have different importance and they do not have to finish before deadlines,
+so that we abandon deadline to present the importance of applications.
+In this paper, we use weight to express the importance of applicatinos.
+For the example supporting the internal communication requirement of a search engine with intense internal computation should be more emergent than supporting the file backup on a distributed storage system. 
+When scheduling coflows from these two applications, we would like to take this difference into consideration and assign different weights to them, i.e., coflows of search engine have a higher weight, while coflows of file back have a lower weight.
+In this case, instead of minimizing average coflow completion time, we try to minimize average weight coflow completion time.
 
 %\begin{table}[th!]\label{model_define}
 %\begin{center}
@@ -361,7 +364,7 @@ As a result, instead of minimizing average coflow completion time, we try to min
 
 \subsection{Problem formulation}
 
-We consider the offline scheduling of n coflows on a non-blocking DCN with m hosts, i.e., there are m ingresses and m egresses, and their capacity is 1.
+We consider the offline scheduling of n coflows on a non-blocking DCN with m hosts, i.e., there are m ingresses and m egresses, and their capacities are  1.
 All coflows arrive at time 0.
 The k-th coflow indicated by  $F^{(k)}$ is a collection of parallel flows. $F^{(k)}=\{f^k_{i,j}|1 \leq i\leq m,1\leq j \leq m\}$, where $f^k_{i,j}$ is the flow size sends from host i to host j. 
 In reality, there are no flows sending from host i to host j. Under this condition $f^k_{i,j}=0$.  $C_{k}$ denotes the completion time coflow $F^{(k)}$. 
@@ -373,20 +376,20 @@ Weight of coflow $F^{(k)}$ is $w_k$. We now define the Weight Coflow Completion 
 &&\forall k,i: \sum_{\forall l:C_l \leq C_k}\sum_{j=1}^{m}f_{i,j}^{(l)} \leq C_k   \label{eq:egress_constraint}
 \end{eqnarray}
 
-For a given set of coflows, labeled 1...n, minimizing their average weight completion time is equivalent to 
-minimizing their sum of weight completion time, just as (\ref{eq:WCCO-SC}) shown. 
+Where minimizing their average weight coflow completion time is equivalent to 
+minimizing their sum of weight coflow completion time, just as (\ref{eq:WCCO-SC}) shown. 
 (\ref{eq:ingress_constraint}) is the constraint on sender side and (\ref{eq:egress_constraint}) is the constraint on receiver side.
 
 \subsection{NP-hard proof} \label{np-hard-proof}
-In this section, we prove that the target of minimizing average coflow weight completion time
-is equivalent to the problem that minimizing average job weight completion time in concurrent open shop problem.
+In this section, we prove that the target of minimizing average weight coflow completion time
+is equivalent to the problem minimizing average weight job completion time in concurrent open shop problem.
 \begin{proposition} \label{WCCO-eq}
-Weight Coflow Completion Optimization (WCCO) problem is equivalent to the problem of minimizing the sum of job weight completion times in a concurrent open shop.
+Weight Coflow Completion Optimization (WCCO) problem is equivalent to the problem of minimizing the sum of weight job completion time in a concurrent open shop.
 \end{proposition}
 
 \begin{IEEEproof}
 For the $m \times m$ network fabric, we mark ingress ports as $1..m$ and egress ports as $ m+1...2m$.
-We consider the transferring time of coflow $F^{(k)}$ through port p:
+We consider the transferring time of coflow $F^{(k)}$ through port p ($1\leq p \leq $2m):
 
 
 \begin{eqnarray} \label{load_define}
@@ -397,15 +400,15 @@ T_p^{(k)}=\left\{ \begin{array}{ll}
 \end{eqnarray}
 
 
-As a result, for the given coflow $F^{(k)}$, there are 2m transfer subflows and each transfer time is computed as (\ref{load_define}).
+For the given coflow $F^{(k)}$, there are 2m sub-transfers and each sub-transfer's time is computed as (\ref{load_define}).
 Now, we consider the concurrent open shop scheduling problem with 2m identical machines (hence the same capacity). 
-n jobs arrive at time 0 and each job has 2m types of operations on the 2m identical machines. 
-Then each coflow can be regarded as a job and each port can be regarded as one machine.
-Coflow k transfers through port p is the same as job j operates on machine m. 
+n jobs arrive at time 0 and each job has 2m types of operations on the 2m machines. 
+Each coflow can be regarded as a job and each port can be regarded as one machine.
+Coflow has sub-transfer through port p can be regarded as job has an operation on the machine labeled by p.
 The two problems are equivalent.
 \end{IEEEproof}
-It has been proved that minimizing average job weight completion time is a NP-hard problem \cite{mastrolilli2010minimizing}\cite{chen2000supply}\cite{roemer2006note}\cite{qiu2016experimental},
-so even the offline problem WCCO is also NP-hard.
+It has been proved that minimizing average weight job completion time is a NP-hard problem \cite{mastrolilli2010minimizing}\cite{chen2000supply}\cite{roemer2006note}\cite{qiu2016experimental},
+so even the coflow offline schedule problem WCCO is also NP-hard.
 %.  Assume there are N machines (indexed by 1,2,...N) connecting to the data center network. Each machine connects to the giant switch through the link with the capacity of R. We define the coflow set as $\Psi$ and each coflow contains many flows($f_{\psi}^{j}$) whose source ($P_{\psi}^{j_{in}}$ )and destination($P_{\psi}^{j_{out}}$ ) are known beforehand. The weight for coflow $\psi$ is $w_{\psi}$.
 %$p_{\psi}^j$  is transfer time for flow  $f_{\psi}^{j}$, $r_{\psi}^{j}$ is the start (release) time of flow  $f_{\psi}^{j}$ and $d_{\psi}^j$ is volume for flow  $f_{\psi}^{j}$ .  Details for our model is shown at Table \ref{model_define}.
 
@@ -459,19 +462,17 @@ so even the offline problem WCCO is also NP-hard.
 %According to \cite{roemer2006note} and \cite{mastrolilli2010minimizing}, finding a sequence of minimizing weight job completion time is NP-hard. As the problem is equivalent to minimizing coflow weight completion time, so finding a permutation of coflow to minimize weight coflow completion time is also NP-hard.
 
 \section{Algorithm design and analysis}\label{algorithm}
- 
-Minimizing average coflow weight completion is indeed to find a permutation of coflows.
- It is NP-hard just as the proof of last section, so efficient heuristic is needed. 
-To solve this, we first change a 2-approximate algorithm that aims to minimize average job weight completion time to coflow scheduling.
-Then we proposal an on-line algorithm based on this. 
-Last of the section, we test the performance loss of the online algorithm.
+WCCO is NP-hard though it assumes all coflows arrive at time 0. 
+More complex for the real world scheduling as coflows will arrive at any time in reality.
+In this section, we first change a 2-approximate algorithm that aims to optimize WCCO problem.
+Then we proposal an online algorithm on the basis of this. 
+Last of the section, we test the performance loss of the online algorithm under the offline settings.
  
  
 \subsection{Weight coflow completion time offline algorithm}
-Currently, the best known results for minimizing average job weight completion time is a 2-approximation greedy algorithm\cite{kumar2011lp}\cite{mastrolilli2010minimizing}.
-The algorithm intends to minimize average job weight completion time and we can't put the original algorithm into coflow scheduling directly. 
-According to the correspondence between WCCO and minimizing average job weight completion time problem that is introduced at section \ref{np-hard-proof}, 
-we get the 2-approximate algorithm for WCCO as Algorithm \ref{offline} shown.
+Currently, the best known results for minimizing average weight job completion time is a 2-approximation greedy algorithm\cite{kumar2011lp}\cite{mastrolilli2010minimizing}.
+According to the correspondence between WCCO and minimizing average weight job completion time problem that is introduced at section \ref{np-hard-proof}, 
+we get the 2-approximate algorithm for WCCO problem as Algorithm \ref{offline} shown.
  \begin{algorithm} 
  \caption{2-approximation offline algorithm}
  \begin{algorithmic}[1]\label{offline}
@@ -501,11 +502,10 @@ we get the 2-approximate algorithm for WCCO as Algorithm \ref{offline} shown.
 
 Input of Algorithm \ref{offline} is $\mathcal{C}$ and  $f_{i,j}$, where $\mathcal{C}$ is the coflow set and  $f_{i,j}^k$ is the size of data from port i to j. 
 Output of the Algorithm \ref{offline} is $\gamma$, which indicates scheduling permutation of coflows.
-For the detail of algorithm. 
- Line1 does some initialism operations, where $UC$ is the set of coflows to be scheduled,$ W $is the weight set and P is the port set. 
+ Line1 does some initialism operations, where $UC$ is the set of coflows to be scheduled, $ W $ is the weight set and P is the port set. 
  Line2$\sim$Line4 computes the load on each port. 
  Line5 $\sim$ Line12 decides the coflow scheduling sequence. 
- Firstly, Line6 finds the port which owns the heaviest load. 
+ At first, Line6 finds the port which owns the heaviest load. 
  Then Line7 finds the corresponding coflow with the minimal ration of weight and load on that port. 
  Line8$\sim$Line10 is adjust process.
  Line11 gets rid of this coflow from the unschedule sets. 
@@ -513,7 +513,7 @@ For the detail of algorithm.
  
 Within O(n(m+n)) elementary operations, Algorithm \ref{offline} will generate the schedule sequence $\gamma$, 
 in which Coflow ranks front will be scheduled prior.
- Although Algorithm \ref{offline} has been proved to work well \cite{mastrolilli2010minimizing} for the offline situation, 
+ Although Algorithm \ref{offline}  provides a 2-approximate for WCCO problem, 
  it has the constraint that assuming coflows arrive at time 0. 
  In practice, coflows arrive dynamically, so that directly using the algorithm is impossible.
 Some changes should be made to let it work well for the online situation.
@@ -589,7 +589,7 @@ Algorithm \ref{offline} decides coflow's position  by the ratio of coflow weight
 As today's data centers generally assign jobs with load balancing \cite{dean2008mapreduce}, 
 so that we can make the relaxation of ignoring load difference of each port.
 When a new coflow comes,  we can set the lowest priority to the coflow which has maximum per-port load. 
-Then we get the online approach which is shown as Algorithm \ref{online-algorithm}.
+Then we get the online approach which is as Algorithm \ref{online-algorithm} shown.
 
 \begin{algorithm} 
  \caption{Online approach to minimize average coflow weight completion time}
@@ -609,7 +609,7 @@ Then we get the online approach which is shown as Algorithm \ref{online-algorith
  \end{algorithm}
  
  
- Algorithm \ref{online-algorithm} is called when a new coflow starts. 
+ Algorithm \ref{online-algorithm} is called when a new coflow arrives. 
  Different from Algorithm \ref{offline}, Input of  Algorithm \ref{online-algorithm} is remaining flow size from each port pair.
  Line2$\sim$Line4 computes the load on each port. 
  Instead of considering load diversity on each port, we directly compute the ratio of weight and load at Line5.
@@ -627,19 +627,18 @@ If we use insertion sorting, main elementary operations is only O(m+nlogn) and t
 %In our assumption, the capacity of each port is 1. 
 
 \subsection{Distance between the online and offline algorithm}
-Comparing with the offline 2-approximate algorithm, algorithm \ref{online-algorithm} ignores load diversity and this may lead to performance loss.
+Compare with the offline algorithm, algorithm \ref{online-algorithm} ignores load diversity and this may lead to performance loss.
 In this section we study the performance gap between the online and the 2-approximate offline algorithm. 
-Firstly, we consider the schedule of 500 coflows served by a small-scale cluster consisting of 60 hosts. 
-These hosts are connected with a non-blocking network fabric, where each port (both ingresses and egresses) has the capacity of 1 Gbps. 
-Coflow traces are synthesized with the same real-world parameters detailed in Section \ref{evaluation}. 
-Weight of each coflow ranges within 1 to 5.
+Firstly, we consider the schedule of 100 coflows served by a small-scale cluster consisting of 60 hosts. 
+These hosts are connected with a non-blocking network fabric, where each port (both ingress and egress) has the capacity of 1 GB/s. 
+More details of the simulator is shown at Section \ref{evaluation}. 
+Let all coflows arrive at time 0 and set weight within 1 to 5.
 Fig. \ref{online-offline-fig} shows the result. 
 
-From Fig. \ref{online-offline-fig},we can see some details of performance gap between the two methods.
-In total, the online algorithm performs close to the 2-approximate algorithms and it only prolongs the transfer of large coflows. 
+From Fig. \ref{online-offline-fig}, we can see the online algorithm performs close to the 2-approximate algorithms in total and only prolongs the transfer of large coflows. 
 As coflows are generated randomly, we repeat the numerical simulation 200 times. 
-Table \ref{tab:loss} shows the proportions of $\frac{avg cwct\  of \ online}{avg cwct \ of \  2-appr}-1$, where $avg cwct $ means average coflow weight completion time.
-We can  see that more than half of the performance loss is less than 0.025.
+Table \ref{tab:loss} shows the proportions of $\frac{avg \;wcct\  of \ online}{avg\; wcct \ of \  2-appr}-1$, where $avg\;wcct $ means average weight coflow completion time.
+We can see that more than half of the performance loss is less than 0.025.
 More than 91\% cases have the less than 0.1 performance gap and no cases  exceed 0.15.  
 
       \begin{table}[!htb]
@@ -671,14 +670,14 @@ More than 91\% cases have the less than 0.1 performance gap and no cases  exceed
       \end{table}
       
 
-We conclude comparing with the offline algorithm, online algorithm has little performance. 
-Indeed, it is much more simple and can maintain relative high performance just as Table. \ref{tab:comparison} shown,
-so in reality, using the online algorithm to schedule coflow is a good choice.
+As Table. \ref{tab:comparison} shown, we conclude comparing with the offline algorithm, online algorithm has little performance loss. 
+Indeed, it is much more simple and can maintain relative high performance,
+so that in reality, using the online algorithm to schedule coflow is a good choice.
 
 \begin{figure}[b]
 \begin{center}
 \includegraphics [width=0.8\columnwidth] {./figs/performance/online_offline.pdf}
-\caption{Performance comparison between 2-approximate algorithm and online algorithm}
+\caption{[Simulation] Performance comparison between 2-approximate algorithm and online algorithm}
 \label{online-offline-fig}
 \end{center}
 \end{figure}
@@ -686,8 +685,8 @@ so in reality, using the online algorithm to schedule coflow is a good choice.
 
 \section{Yosemite System}\label{Yosemite system}
 
-In this section, we introduce the design of Yosemite which is a system aims to minimize average coflow weight completion time. 
-Yosemite includes about 4000 lines of java as well as scala code and it follows the actor model like Alluxio\cite{alluxio}, hadoop\cite{hadoop},etc.
+In this section, we introduce the design of Yosemite which is a system aims to minimize average weight coflow completion time. 
+Yosemite includes about 6000 lines of java as well as scala code and similar to Alluxio\cite{alluxio}, hadoop\cite{hadoop}, its design follows the actor model\cite{actor}.
  Yosemite uses Akka \cite{Akka} for message transferring and kryo \cite{kryo} for object serialization. 
  Code of Yosemite can be downloaded at \cite{Yosemite}.
  In this section, we first introduce actors of Yosemite and the communication between them.
@@ -737,7 +736,7 @@ Yosemite includes about 4000 lines of java as well as scala code and it follows 
 
 Fig. \ref{System-design-fig} shows the architecture of Yosemite.
 There are two type of nodes: master and worker. 
-Each worker node includes two main components: client and slave.
+Each worker node includes two main components: Client and Slave.
 Client contains API daemon and Rate limiter. 
 API daemon is used to interact with applications and Rate Limiter is responsible for throttling flow rate according to the computation result sent from master.
 Slave has two long running server: data server and comm server. 
@@ -760,8 +759,8 @@ The computation method of it is:
 g^{(k)}=\max(\max \limits_i \frac{ \sum_{j=1}^mf_{i,j}^{(k)}}{Rem(P_i^{(in)})},\max \limits_j \frac{ \sum_{i=1}^mf_{i,j}^{(k)}}{Rem(P_j^{(out)})})
 \end{eqnarray}
 Where Rem(.) denotes the remaining bandwidth of an ingress or egress port estimated by the scheduler.
-(\ref{weight_completion_gamma}) gets the slowest time of each coflow according to the bottleneck link.
-After this, on the base of bottleneck time, it computes $b_{i,j}$ for each flow that transfers from port i to port j 
+(\ref{weight_completion_gamma}) computes out transfer time of the slowest flows that belongs to coflow $F^{(k)}$.
+After this, on the basis of bottleneck time, it computes bandwidth $b_{i,j}$ for each flow that transfers from port i to port j 
 Then master updates port available bandwidth as Line5$\sim$Line6 shown.  
 After the process of Algorithm.\ref{bandwidth_allocate}, scheduler calculates out bandwidth for each flow.
 At last, scheduler sends the result to each worker, then worker sends flows according to the computation result.
@@ -817,7 +816,9 @@ Send tasks coflowId and IP address of destination node as parameters.
 This method sends a flow that belongs to coflowId.
  Receive tasks coflowId as the parameter.
  This method is used to receive data belongs to the corresponding coflow.
-ReleaseCoflow takes coflowId as the parameter and it is used to release the coflow when finishing transferring.
+ If return true, denoting worker receivers data successfully. 
+ Otherwise it will return false.
+ReleaseCoflow takes coflowId as the parameter and it is used to release the coflow when all flows belong to the coflow finish transferring.
 
 
 
@@ -825,7 +826,7 @@ ReleaseCoflow takes coflowId as the parameter and it is used to release the cofl
 \begin{figure}[b]
 \begin{center}
 \includegraphics [width=1.0\columnwidth] {./figs/fake/fake2.eps}
-\caption{[cloud] File distribute application performance comparison}
+\caption{[Cloud] File distribute application performance}
 \label{distribute-fig}
 \end{center}
 \end{figure}
@@ -870,7 +871,7 @@ Note, in this paper, we use TCP-fair sharing as our baseline method.
 \begin{figure}[b]
 \begin{center}
 \includegraphics [width=1.0\columnwidth] {./figs/fake/fake4.eps}
-\caption{[cloud] With and without work conserving comparison }
+\caption{[Cloud] With and without work conserving}
 \label{conserving-fig}
 \end{center}
 \end{figure}
@@ -880,24 +881,24 @@ Note, in this paper, we use TCP-fair sharing as our baseline method.
 \hspace{0.1in}
 \subfigure[Error messages frequency] {\includegraphics[width=1.6 in]{./figs/fake/fake6.eps}}
 \hspace{0.1in}
-\caption{[cloud] Overheads of Yosemite}
+\caption{[Cloud] Overheads of Yosemite}
 \label{overheads_fig}
 \vspace{-0.1 in}
 \end{figure}
 \begin{figure}[b]
 \begin{center}
 \includegraphics [width=0.8\columnwidth] {./figs/fake/fake3.eps}
-\caption{[cloud] Performance comparison between Yosemite and Yosemite-sim under the same  setting}
+\caption{[Cloud] Performance comparison between Yosemite and Yosemite-sim under the same settings}
 \label{sim-real}
 \end{center}
 \end{figure}
 
 \begin{figure*}[!t]
 \centering
-\subfigure[Improvement of wcct] {\includegraphics[width=4.9 in]{./figs/real/weight_real_type.eps}}
+\subfigure[Improvement of WCCT] {\includegraphics[width=4.9 in]{./figs/real/weight_real_type.eps}}
 \hspace{0.1in}
-\subfigure[Distribution of wcct(s)] {\includegraphics[width=2.05 in]{./figs/real/weight_CDF_compare.eps}}
-\caption{[Simulation] Detail of wcct for Yosemite, Barrat, Varys,  Aalo, TCP fair-sharing under real data center traffic trace,TCP fair-sharing is selected as the baseline.}
+\subfigure[Distribution of WCCT(s)] {\includegraphics[width=2.05 in]{./figs/real/weight_CDF_compare.eps}}
+\caption{[Simulation] Detail of WCCT for Yosemite, Barrat, Varys,  Aalo, TCP fair-sharing under real data center traffic trace,TCP fair-sharing is selected as the baseline.}
 \vspace{-0.1 in}
 \label{evalution_real_weight_fig}
 \vspace{-0.1 in}
@@ -907,9 +908,9 @@ Note, in this paper, we use TCP-fair sharing as our baseline method.
 
 \begin{figure*}[!t]
 \centering
-\subfigure[Improvement of cct] {\includegraphics[width=4.9 in]{./figs/completion/real_type.eps}}
-\subfigure[Distribution of cct(s)] {\includegraphics[width=2.1 in]{./figs/completion/CDF_compare.eps}}
-\caption{[Simulation] Detail of cct for Yosemite, Barrat, Varys,  Aalo, TCP fair-sharing under real data center traffic trace, TCP fair-sharing is selected as the baseline.}
+\subfigure[Improvement of CCT] {\includegraphics[width=4.9 in]{./figs/completion/real_type.eps}}
+\subfigure[Distribution of CCT(s)] {\includegraphics[width=2.1 in]{./figs/completion/CDF_compare.eps}}
+\caption{[Simulation] Detail of CCT for Yosemite, Barrat, Varys,  Aalo, TCP fair-sharing under real data center traffic trace, TCP fair-sharing is selected as the baseline.}
 \label{evalution_real_fig}
 \end{figure*}
 
@@ -978,18 +979,18 @@ We can see that when the concurrent worker number is over 200, peak error messag
 Write down the trace of distribute file application and let the simulator run the trace under the same parameter.
 Fig. \ref{sim-real} shows the performance gap between Yosemite and trace-driven simulator.
 We can see performance gap between cloud platform and Yosemite is narrow($<15\%$).
-In the following section, we use our trace-driven simulator to do some larger experiments.
+In the following section, we use trace-driven simulator to test performance of Yosemite at larger scale.
 
 \subsection{Trace-driven simulation} 
 In this section, we use trace of facebook \cite{chowdhury2014efficient} to test the performance of Yosemite.
 As the original trace doesn't include weight information, we randomly generate weight ranging from 1 to 10.
-Repeat the process 100 times and Fig .\ref{evalution_real_weight_fig} shows the performance comparison between Yosemite, Barrat, Varys,  Aalo and TCP fair-sharing. 
+Repeat the process 100 times and Fig .\ref{evalution_real_weight_fig} shows the performance of Yosemite, Barrat, Varys,  Aalo and TCP fair-sharing. 
 Note TCP fair-sharing is selected as the baseline in this group.
 
 
- Fig. \ref{evalution_real_weight_fig}(a) implies that Yosemite greatly reduces the average wcct across all coflow types. 
+ Fig. \ref{evalution_real_weight_fig}(a) implies that Yosemite greatly reduces the average weight coflow completion time across all coflow types. 
  The improvement factors of Yosemite are 3.5 (Narrow\&Short), 1.6 (Narrow\&Long), 1.7 (Wide\&Short), 1.4  (Wide\&Long) and 1.5 (ALL), 
- while that of Varys are 2.4 (Narrow\&Short), 0.9 (Narrow\&Long), 1.2 (Wide\&Short), 1.3 (Wide\&Long) and 1.2 (ALL). 
+ while Varys are 2.4 (Narrow\&Short), 0.9 (Narrow\&Long), 1.2 (Wide\&Short), 1.3 (Wide\&Long) and 1.2 (ALL). 
  We repeat the experiment 100 times and error bar indicates maximum, minimum and average value. 
  To eliminate the  influence of extreme value, we we remove the top and last result 2.5\% of each methods and recompute the factor of improvement, then we get
 the 95th factor of improvement.
@@ -1002,8 +1003,8 @@ the 95th factor of improvement.
  Compare with TCP-fair sharing method, through Yosemite can reduce average wcct, it prolongs the tail value. 
  That is to say, for applications which involves lot long flows, weight completion time will have long duration using Yosemite and this is trivial for private cloud.
  
-  Fig. \ref{evalution_real_weight_fig} indicates, Yosemite can decrease wcct significantly. 
- One may be interested in the coflow completion time (cct) performance of Yosemite. 
+  Fig. \ref{evalution_real_weight_fig} indicates Yosemite can decrease wcct significantly. 
+ One may be interested in the cct (coflow completion time) performance of Yosemite. 
  Fig. \ref{evalution_real_fig} shows cct performance of Yosemite, Barrat, Varys,  Aalo, TCP-fair sharing with the same settings, TCP-fair sharing is selected as the baseline. 
 Fig. \ref{evalution_real_fig}(a) shows that the improvement factors of Yosemite on cct  are 2 (Narrow\&Short),1.1 (Narrow\&Long), 0.8  (Wide\&Short), 0.9   (Wide\&Long) and 1.3 (ALL) , while Varys performs about $\sim5\%$ better than Yosemite. 
  Fig. \ref{evalution_real_fig}(a) also shows the maximum value and minimum value of Yosemite under different weight settings. 
@@ -1022,9 +1023,9 @@ From Algorithm \ref{online-algorithm},  we can see performance of Yosemite is ma
           \caption{Default parameters in each group of experiment} \label{tab:parameters}
           \begin{tabulary}{\textwidth}{cccccr}
               \toprule
-               Number &Length & Width & Weight & Arriva&Capacity\\
+               Number &Length & Width & Weight & Arrival&Capacity\\
               \midrule
-              \multicolumn{1}{r}{512}&[100KB,10GB]   &60& [1,10]  & [0s,1000s]&1GB/s\\
+              \multicolumn{1}{r}{512}&[100KB,10GB]   &60& [1,10]  & [0s,1000s]&10GB/s\\
               \bottomrule
           \end{tabulary}
       \end{table}
@@ -1035,18 +1036,18 @@ Table \ref{tab:parameters} shows the default settings of parameters.
 We start 512 coflows in each group of experiment and length of each coflow are within 100KB to 10GB. 
 Width of each coflows are at most 60 and weight of each coflows are within 1 to 10. 
 coflow's arrival time ranges 0s to 1000s. 
-Ingress and egress port capacity in our experiment are 1GB. 
-We repeat each group of experiments 100 times and draw maximum, minimum as well as average value in the picture.
+Ingress and egress port capacity in our experiment are 10GB/s. 
+We repeat each group of experiments 100 times and draw maximum, minimum as well as average value pictures.
 
  \subsubsection{Impact of coflow length}
  In this group of experiment, we test the influence of coflow length.
  Coflow width, weight, arrival time are set as Table \ref{tab:parameters} shown. 
  In each group of experiment, we only change length of coflow.  
  Coflow length in our experiment are set within [100KB,K]. 
- Varying K from 200MB to 700MB. 
- Fig. \ref{evalution_cases_different_fig} (a) shows the result. 
- From Fig. \ref{evalution_cases_different_fig} (a) we can see that with the increasing of K, improvement of Yosemite becomes larger. 
- For example, when K is 200MB,  improvement of Yosemite is 2 and when K is 700MB, improvement of Yosemite is 3. 
+ Varying K from 1GB to 6GB. 
+ Fig. \ref{evalution_cases_different_fig}(a) shows the result. 
+ From Fig. \ref{evalution_cases_different_fig}(a) we can see that with the increasing of K, improvement of Yosemite becomes larger. 
+ For example, when K is 1GB,  improvement of Yosemite is 2 and when K is 6GB, improvement of Yosemite is 3. 
 Indeed, when K becomes larger, length differentiation between coflows becomes larger, scheduling result is better.
  
  \subsubsection{Impact of coflow width}
@@ -1076,10 +1077,10 @@ The reason for this is that when workload becomes heavier, the optimization spac
   
   \subsection{Distance to Optimiztion}
  
- It is hard to  find the optimal schedule is infeasible, we tried to find an LP-based solution \cite{qiu2015minimizing}. 
-We run the experiment with facebook trace and generate weight within [1,5]. 
- Repeat the experiment 20 times and experiment is shown as Fig. \ref{LP-based-fig}. 
- We can see that in total Yosemite has less than 10\% performance loss. 
+It is hard to  find the optimal schedule is infeasible, we tried to find an LP-based solution \cite{qiu2015minimizing}. 
+We run the experiment with facebook trace and generate weight within 1 to 5. 
+Repeat the experiment 20 times and the result is shown as Fig. \ref{LP-based-fig}. 
+We can see that Yosemite and the LP-based solution has less than 10\% performance gap.
  
  \section{Conclusion} \label{conclusion}
  In this paper, we use weight to quantify the importance of applications.  
@@ -1088,10 +1089,9 @@ We design and implement Yosemite-a coflow scheduling system that aims to minimiz
 We test the performance of it by trace-driven simulation and test-bed deployment.
 Experiments show Yosemite can reduce average weight coflow completion time significantly.  
 
-Although Yosemite works well on minimizing average weight coflow completion time, It is Clairvoyant method and this constraints its usage.
-Indeed in data center network, applications such as file backup, file distributes can know these information.
-For some computation applications, they are hard to get.
-As a result, in the future, we will make advance of Yosemite to let it work in Non-Clairvoyant way.
+Although Yosemite works well on minimizing average weight coflow completion time, it is Clairvoyant method.
+Indeed in data center network, applications such as file backup, file distributes can know coflow details, but for some computation applications, they are hard to get.
+To make Yosemite use more widely, in the future, we will make advance of Yosemite to let it work in Non-Clairvoyant way.
 
 
 \bibliographystyle{abbrv}

@@ -3,12 +3,15 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: ton_caching.aux
 The style file: abbrv.bst
 Database file #1: paper.bib
-Warning--to sort, need author or key in YosemiteSim
-Warning--to sort, need author or key in varys
+Warning--to sort, need author or key in alluxio
 Warning--to sort, need author or key in hadoop
-Warning--to sort, need author or key in Yosemite
+Warning--to sort, need author or key in actor
 Warning--to sort, need author or key in Akka
 Warning--to sort, need author or key in kryo
+Warning--to sort, need author or key in Yosemite
+Warning--to sort, need author or key in openstack
+Warning--to sort, need author or key in YosemiteSim
+Warning--to sort, need author or key in TC
 Warning--empty booktitle in DCTCP
 Warning--empty booktitle in pFabric
 Warning--can't use both volume and number fields in chowdhury2015efficient
@@ -18,45 +21,45 @@ Warning--can't use both volume and number fields in dogar2014decentralized
 Warning--can't use both volume and number fields in munir2014friends
 Warning--empty booktitle in D2TCP
 Warning--empty booktitle in D3
-You've used 34 entries,
+You've used 37 entries,
             2118 wiz_defined-function locations,
-            681 strings with 9317 characters,
-and the built_in function-call counts, 13874 in all, are:
-= -- 1394
-> -- 643
+            689 strings with 9490 characters,
+and the built_in function-call counts, 14351 in all, are:
+= -- 1439
+> -- 646
 < -- 22
-+ -- 259
++ -- 262
 - -- 222
-* -- 955
-:= -- 2083
-add.period$ -- 108
-call.type$ -- 34
-change.case$ -- 214
+* -- 970
+:= -- 2134
+add.period$ -- 114
+call.type$ -- 37
+change.case$ -- 223
 chr.to.int$ -- 0
-cite$ -- 49
-duplicate$ -- 541
-empty$ -- 1100
+cite$ -- 55
+duplicate$ -- 562
+empty$ -- 1169
 format.name$ -- 222
-if$ -- 3052
+if$ -- 3172
 int.to.chr$ -- 0
-int.to.str$ -- 34
+int.to.str$ -- 37
 missing$ -- 26
-newline$ -- 167
+newline$ -- 179
 num.names$ -- 56
-pop$ -- 273
+pop$ -- 297
 preamble$ -- 1
-purify$ -- 179
+purify$ -- 185
 quote$ -- 0
-skip$ -- 446
+skip$ -- 470
 stack$ -- 0
-substring$ -- 893
-swap$ -- 206
+substring$ -- 908
+swap$ -- 209
 text.length$ -- 22
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 136
-warning$ -- 15
+type$ -- 148
+warning$ -- 18
 while$ -- 120
-width$ -- 36
-write$ -- 366
-(There were 15 warnings)
+width$ -- 39
+write$ -- 387
+(There were 18 warnings)
