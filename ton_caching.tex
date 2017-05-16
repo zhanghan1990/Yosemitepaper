@@ -871,7 +871,7 @@ In this paper, we use factor of improvement as our metrics. The definition of fa
 \begin{eqnarray} \label{improvement}
 Factor \;of\; improvement=\frac{baseline\; avg \;WCCT}{current\;avg \;WCCT}
 \end{eqnarray}
-Note, in this paper, we use TCP-fair sharing as our baseline method.
+Note, in this paper, we use TCP-fair sharing as the default baseline method.
 \begin{figure}[b]
 \begin{center}
 \includegraphics [width=1.0\columnwidth] {./figs/fake/fake4.eps}
@@ -989,7 +989,7 @@ In the following section, we use trace-driven simulator to test performance of Y
 In this section, we use trace of facebook \cite{chowdhury2014efficient} to test the performance of Yosemite.
 As the original trace doesn't include weight information, we randomly generate weight ranging from 1 to 10.
 Repeat the process 100 times and Fig .\ref{evalution_real_weight_fig} shows the performance of Yosemite, Barrat, Varys,  Aalo and TCP fair-sharing. 
-Note TCP fair-sharing is selected as the baseline in this group.
+Note TCP fair-sharing is selected as the default baseline in this group.
 
 
  Fig. \ref{evalution_real_weight_fig}(a) implies that Yosemite greatly reduces the average weighted coflow completion time across all coflow types. 
@@ -1081,7 +1081,8 @@ The reason for this is that when workload becomes heavier, the optimization spac
   
   \subsection{Distance to Optimization}
  
-It is hard to find the optimal schedule, so that we find an LP-based solution \cite{qiu2015minimizing} whose approximation ratio is$\frac{67}{3}$ to compare with. 
+It is hard to find the optimal schedule, so that we find an LP-based solution \cite{qiu2015minimizing} whose approximation ratio is
+$\frac{67}{3}$ to compare with. 
 Use facebook trace and generate weight within 1 to 5, then repeat the experiment 20 times and Fig. \ref{LP-based-fig} shows the result. 
 We can see that Yosemite has less than 10\% performance gap.
  
